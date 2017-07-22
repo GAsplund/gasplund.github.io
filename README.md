@@ -1,3 +1,3 @@
-﻿# gasplund.github.io
+﻿# GAsplund's Website
 
-This is my own site yo.
+This is my own site yo. (Work in progress)
