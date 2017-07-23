@@ -1,0 +1,134 @@
+/* ########################################################################################## */
+/* ########################################## BODY ########################################## */
+/* ########################################################################################## */
+
+body {
+	background: #e8e8e8;
+	font-family: Verdana;
+	font-size: 14px;
+	margin: 0;
+	padding: 0;
+}
+
+/* ########################################################################################## */
+/* ######################################### HEADER ######################################### */
+/* ########################################################################################## */
+
+#header h1 {
+	float: left;
+	font-family: Trebuchet MS;
+	font-size: 40px;
+	font-weight: normal;
+	letter-spacing: 0.07em;
+	margin: 0;
+	padding: 0;
+	padding-left: 15%;
+	text-transform: uppercase;
+	background-color: black;
+	color: #ffffff;
+}
+
+/* ########################################################################################## */
+/* ####################################### NAVIGATION ####################################### */
+/* ########################################################################################## */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+	padding-left: 15%;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 14px;
+    text-decoration: none;
+    font-family: Trebuchet MS;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: #333;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: DimGray}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* ########################################################################################## */
+/* #################################### DOWNLOAD BUTTONS #################################### */
+/* ########################################################################################## */
+
+/* Altar Program for Blood Magic */
+.BloodMagicButton {
+	background-color:#bd1313;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Verdana;
+	font-size:20px;
+	font-weight:bold;
+	padding:15px 24px;
+	text-decoration:none;
+}
+.BloodMagicButton:hover {
+	background-color:#bd1313;
+}
+.BloodMagicButton:active {
+	position:relative;
+	top:1px;
+}
+
+/* Reactor Program for Big Reactors */
+.BigReactorsButton {
+	background-color:#575454;
+	border:1px solid #000000;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Verdana;
+	font-size:20px;
+	font-weight:bold;
+	padding:15px 24px;
+	text-decoration:none;
+}
+.BigReactorsButton:hover {
+	background-color:#575454;
+}
+.BigReactorsButton:active {
+	position:relative;
+	top:1px;
+}
