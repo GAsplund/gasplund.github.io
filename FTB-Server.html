@@ -106,16 +106,14 @@
 				background-color: #eee;
 				padding: 0.5em;
 				margin: 0.5em;
+				width: 20%;
 			}
 			.label {
 				text-align: right;
 				float: left;
 				margin-right: 1em;
-				min-width: 8em;
+				min-width: 4em;
 				color: #444;
-			}
-			.grey {
-				color: #666;
 			}
 		</style>
 		
@@ -130,29 +128,19 @@
 		<script>w3.includeHTML();</script>
 		<!-- Place code under this comment -->
 
-		<div style="padding-left:3%; padding-top:2%; text-decoration:underline">
-			<h2>Server Status:</h2>
+		<div style="padding-left:0.5em; padding-top:2%; text-decoration:underline; font-family:Trebuchet MS">
+			<h1>Server Status:</h1>
 		</div>
 
 		<div class="statusbox">
 			<span class="label">Online: </span>
 			<i id="online" class="fa fa-question"></i>
 			<br>
-			<span class="label">Version: </span>
-			<i id="version" class="fa fa-question"></i>
-			<br>
-			<span class="label">MOTD: </span>
-			<i id="motd" class="fa fa-question"></i>
-			<br>
 			<span class="label">Players: </span>
 			<i id="numplayers" class="fa fa-question"></i>
 			<br>
-			<span class="label">&nbsp;</span>
-			<i id="players" class="fa fa-question"></i>
-			<br>
-
-			<span class="label grey">Last Updated: </span>
-			<i id="updated" class="fa fa-question grey"></i>
+			<span class="label">MOTD: </span>
+			<i id="motd" class="fa fa-question"></i>
 			<br>
 		</div>
 
