@@ -15,7 +15,6 @@ body {
 
 #header h1 {
 	float: left;
-	font-family: Trebuchet MS;
 	font-size: 40px;
 	font-weight: normal;
 	letter-spacing: 0.07em;
@@ -49,8 +48,6 @@ li a, .dropbtn {
 	text-align: center;
 	padding: 14px 14px;
 	text-decoration: none;
-	font-family: Trebuchet MS;
-	font-size: 15px;
 	font-weight: bold;
 }
 
