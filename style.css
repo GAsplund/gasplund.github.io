@@ -53,6 +53,7 @@ li a, .dropbtn {
 	font-family: Trebuchet MS;
 	font-size: 15px;
 	font-weight: bold;
+	-webkit-padding: 14px 14px;
 }
 
 li a:hover, .dropdown:hover .dropbtn {
