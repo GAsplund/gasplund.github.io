@@ -4,7 +4,7 @@
 
 body {
 	background: #e8e8e8;
-	font-family: Trebuchet MS;
+	font-family: "Trebuchet MS";
 	margin: 0;
 	padding: 0;
 }
@@ -97,7 +97,6 @@ li.dropdown {
 	display:inline-block;
 	cursor:pointer;
 	color:#000000;
-	font-family:Trebuchet MS;
 	font-size:20px;
 	font-weight:bold;
 	padding:15px 43.5px;
@@ -120,7 +119,6 @@ li.dropdown {
 	display:inline-block;
 	cursor:pointer;
 	color:#000000;
-	font-family:Trebuchet MS;
 	font-size:20px;
 	font-weight:bold;
 	padding:15px 27.5px;
