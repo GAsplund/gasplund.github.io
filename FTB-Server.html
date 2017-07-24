@@ -26,7 +26,8 @@
 		<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
 		<script src="//momentjs.com/downloads/moment.min.js"></script>
 		<script src="//ujafedny.org/assets/bower_components/moment/locale/*.js"></script> 
-		
+		<script>function Reload() {location.reload();}</script>
+
 		<script>
 		var rq = '//mcapi.us/server/status?ip=gasplund.mc-server.net';
 		var error = 'unknown';
@@ -139,7 +140,7 @@
 			<i id="motd" class="fa fa-question"></i>
 			<br>
 			<br>
-			<span class="label">Refresh: </span><form><input type="button" onClick="history.go(0)" value="<i class="fa fa-refresh" aria-hidden="true"></i>"></form>
+			<span class="label">Refresh: </span><button OnClick="Reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 		</div>
 
 	</body>
