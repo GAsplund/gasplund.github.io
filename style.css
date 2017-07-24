@@ -21,8 +21,7 @@ body {
 	font-weight: normal;
 	letter-spacing: 0.07em;
 	margin: 0;
-	padding: 0;
-	padding-left: 15%;
+	padding-left: 10%;
 	text-transform: uppercase;
 	background-color: black;
 	color: #ffffff;
@@ -38,7 +37,7 @@ ul {
 	padding: 0;
 	overflow: hidden;
 	background-color: black;
-	padding-left: 15%;
+	padding-left: 10%;
 }
 
 li {
