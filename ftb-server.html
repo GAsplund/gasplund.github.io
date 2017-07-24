@@ -74,7 +74,7 @@
 				motd = $('#motd'),
 				updated = $('#updated'),
 				d = new Date(data.last_updated*1000);
-			moment.locale('*');				// The locale which you have used before.
+			moment.locale('*');
 			settext(updated, moment(d).fromNow());
 			setclass(online, data.online);
 			if (data.online) {
