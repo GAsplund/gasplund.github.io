@@ -25,7 +25,7 @@
 		<script src="https://www.w3schools.com/lib/w3.js"></script>
 		<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
 		<script src="//momentjs.com/downloads/moment.min.js"></script>
-		<script src="mcapi.js"></script>
+		<script src="mc-server-status.js"></script>
 		<script>function Reload() {location.reload();}</script>
 		
 	</head>
@@ -40,30 +40,31 @@
 		<!-- Place code under this comment -->
 
 		<div style="padding-left:3%; padding-top:1%">
-			<h1><i class="fa fa-signal" aria-hidden="true"></i> Server Status:</h1>
+			<h1><i class="fa fa-power-off" aria-hidden="true"></i> Server Status:</h1>
 		</div>
 
-		<div class="statusbox">
-			<span class="label">IP: </span><span style="font-family:arial">gasplund.mc-server.net</span>
+		<div class="statusbox_mc">
+			<span class="label_mc">IP: </span><span style="font-family:arial">gasplund.mc-server.net</span>
+			<br>
+			<span class="label_mc">Port: </span><span style="font-family:arial">25565</span>
 			<hr style="border: 2px dashed #666666">
-			<span class="label">Online: </span>
+			<span class="label_mc">Online: </span>
 			<i id="online" class="fa fa-question" aria-hidden="true"></i>
 			<br>
-			<span class="label">Players: </span>
-			<i id="numplayers" class="fa fa-question" aria-hidden="true"></i>
+			<span class="label_mc">Players: </span>
+			<i id="players" class="fa fa-question" aria-hidden="true"></i>
 			<br>
-			<span class="label">Version: </span>
+			<span class="label_mc">Version: </span>
 			<i id="version" class="fa fa-question" aria-hidden="true"></i>
 			<br>
-			<span class="label">MOTD: </span>
+			<span class="label_mc">MOTD: </span>
 			<i id="motd" class="fa fa-question" aria-hidden="true"></i>
 			<hr style="border: 2px dashed #666666">
-			<span class="label">Refresh: </span><button OnClick="Reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			<span class="label_mc">Refresh: </span><button OnClick="Reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 			<hr style="border: 2px dashed #666666">
-			<span class="label">Note: </span><span>It may take 3-5 seconds</span>
+			<span class="label_mc">Note: </span><span>It may take 3-5 seconds</span>
 			<br>
-			<span class="label">&nbsp;</span>
-			<span>to update the status.</span>
+			<span class="label_mc">&nbsp;</span><span>to update the status.</span>
 		</div>
 
 	</body>

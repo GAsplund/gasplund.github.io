@@ -23,7 +23,11 @@
 
 		<!-- SCRIPT -->
 		<script src="https://www.w3schools.com/lib/w3.js"></script>
-
+		<script src="//code.jquery.com/jquery-2.2.1.min.js"></script>
+		<script src="//momentjs.com/downloads/moment.min.js"></script>
+		<script src="ark-server-status.js"></script>
+		<script>function Reload() {location.reload();}</script>
+		
 	</head>
 
 	<body>
@@ -35,8 +39,34 @@
 		<script>w3.includeHTML();</script>
 		<!-- Place code under this comment -->
 
-		<div style="padding-top:15%; padding-left:35%">
-			<h2>This website is still in development.</h2>
+		<div style="padding-left:3%; padding-top:1%">
+			<h1><i class="fa fa-power-off" aria-hidden="true"></i> Server Status:</h1>
+		</div>
+
+		<div class="statusbox_ark">
+			<span class="label_ark">IP: </span><span style="font-family:arial">gasplund.mc-server.net</span>
+			<br>
+			<span class="label_ark">Port: </span><span style="font-family:arial">27015</span>
+			<hr style="border: 2px dashed #666666">
+			<span class="label_ark">Online: </span>
+			<i id="online" class="fa fa-question" aria-hidden="true"></i>
+			<br>
+			<span class="label_ark">Players: </span>
+			<i id="players" class="fa fa-question" aria-hidden="true"></i>
+			<br>
+			<span class="label_ark">Version: </span>
+			<i id="version" class="fa fa-question" aria-hidden="true"></i>
+			<br>
+			<span class="label_ark">Map: </span>
+			<i id="map" class="fa fa-question" aria-hidden="true"></i>
+			<br>
+			<span class="label_ark">Last Online: </span>
+			<i id="lastonline" class="fa fa-question" aria-hidden="true"></i>
+			<hr style="border: 2px dashed #666666">
+			<span class="label_ark">Refresh: </span><button OnClick="Reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+			<hr style="border: 2px dashed #666666">
+			<span class="label_ark">Last Check: </span>
+			<i id="lastcheck" class="fa fa-question" aria-hidden="true"></i>
 		</div>
 
 	</body>
