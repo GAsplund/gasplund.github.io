@@ -44,7 +44,6 @@ version = $('#version'),
 is_online = $('#online'),
 last_check = $('#lastcheck'),
 last_online = $('#lastonline'),
-d = new Date(data.last_updated*1000);
 moment.locale('*');
 settext(updated, moment(d).fromNow());
 setclass(online, data.online);
