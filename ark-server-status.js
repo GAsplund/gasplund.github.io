@@ -2,8 +2,8 @@ var rq = 'https://ark-servers.net/api/?object=servers&element=detail&key=UGkfgK5
 var error = 'unknown';
 var classes = {
 error: "fa-question",
-false: "fa-times",
-true: "fa-check",
+0: "fa-times",
+1: "fa-check",
 };
 var allclasses = "";
 for(i in classes) {
