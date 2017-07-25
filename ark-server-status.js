@@ -13,7 +13,7 @@ function q(addr, cb) {
 $.ajax({
 url: rq,
 type: 'GET',
-dataType: 'txt',
+dataType: 'json',
 data: {ip: addr, players: true},
 })
 .done(function(data) {
