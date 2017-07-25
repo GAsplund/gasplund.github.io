@@ -37,7 +37,8 @@ o.removeClass(allclasses);
 o.html(t);
 }
 function display(data) {
-var np = $('#players'),
+var
+np = $('#players'),
 version = $('#version'),
 online = $('#online'),
 motd = $('#motd'),
