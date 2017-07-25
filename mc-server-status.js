@@ -1,4 +1,4 @@
-var rq = '//mcapi.us/server/status?ip=gasplund.mc-server.net';
+var rq = 'https://mcapi.us/server/status?ip=gasplund.mc-server.net';
 var error = 'unknown';
 var classes = {
 error: "fa-question",
