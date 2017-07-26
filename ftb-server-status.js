@@ -47,28 +47,24 @@ function settext(o, t) {
 
 function display(data) {
 	var
-		np = $('#players'),
+		playersnow = $('#players'),
+		playersmax = $('#playersmax'),
 		version = $('#version'),
 		online = $('#online'),
-		motd = $('#motd'),
-		updated = $('#updated'),
 		status = $('#status'),
-		d = new Date(data.last_updated*1000);
-		moment.locale('*');
-		settext(updated, moment(d).fromNow());
 		setclass(online, data.online);
 
 	if (data.online) {
-		settext(np, data.players.now);
+		settext(playersnow, data.players.now);
+		settext(playersmax, data.players.max);
 		settext(version, data.server.name);
-		settext(motd, data.motd);
 		settext(status, data.status);
 	}
 
 	else {
-		setclass(np, error);
+		setclass(playersnow, error);
+		setclass(playersmax, error);
 		setclass(version, error);
-		setclass(motd, error);
 		setclass(status, error);
 	}
 }
