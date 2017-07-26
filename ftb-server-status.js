@@ -72,3 +72,7 @@ function display(data) {
 		setclass(status, error);
 	}
 }
+
+$(document).ready(function() {
+	q('//lentium.xyz', display);
+});
