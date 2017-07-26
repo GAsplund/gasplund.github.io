@@ -38,38 +38,30 @@
 		<script>w3.includeHTML();</script>
 		<!-- Place code under this comment -->
 
-		<div style="padding-left:3%; padding-top:1%">
+		<div style="padding-left:3%; padding-top:1%; float:left">
+
 			<h1>ARK Server:</h1>
-			<h2>IP: <a href="steam://connect/gasplund.mc-server.net:27015/gasplund2017">gasplund.mc-server.net</a></h2>
-			<h2>Port: 27015</h2>
+			<h3>IP: <a href="steam://connect/gasplund.mc-server.net:27015/gasplund2017">gasplund.mc-server.net</a></h3>
+			<h3>Port: 27015</h3>
+			<h1 style="padding-top:5%"><i class="fa fa-power-off" aria-hidden="true"></i> Server Status:</h1>
+
+			<div class="statusbox_ark">
+				<span class="label_ark">Online:</span><i id="online" class="fa fa-question" aria-hidden="true"></i>
+				<br>
+				<span class="label_ark">Players:</span><i id="players" class="fa fa-question" aria-hidden="true"></i><span> /</span><i id="maxplayers" class="fa fa-question" aria-hidden="true"></i>
+				<br>
+				<span class="label_ark">Version:</span><i id="version" class="fa fa-question" aria-hidden="true"></i>
+				<br>
+				<span class="label_ark">Map:</span><i id="map" class="fa fa-question" aria-hidden="true"></i>
+				<hr style="border: 2px dashed #666666">
+				<span class="label_ark">Refresh:</span><button OnClick="Reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+				<hr style="border: 2px dashed #666666">
+				<span class="label_ark">Last Check:</span><i id="lastcheck" class="fa fa-question" aria-hidden="true"></i>
+			</div>
+
 		</div>
 
-		<div style="margin-left:3%; padding-top:1%">
-			<h1><i class="fa fa-power-off" aria-hidden="true"></i> Server Status:</h1>
-		</div>
-
-		<div class="statusbox_ark">
-			<span class="label_ark">Online:</span>
-			<i id="online" class="fa fa-question" aria-hidden="true"></i>
-			<br>
-			<span class="label_ark">Players:</span>
-			<i id="players" class="fa fa-question" aria-hidden="true"></i>
-			<span> /</span>
-			<i id="maxplayers" class="fa fa-question" aria-hidden="true"></i>
-			<br>
-			<span class="label_ark">Version:</span>
-			<i id="version" class="fa fa-question" aria-hidden="true"></i>
-			<br>
-			<span class="label_ark">Map:</span>
-			<i id="map" class="fa fa-question" aria-hidden="true"></i>
-			<hr style="border: 2px dashed #666666">
-			<span class="label_ark">Refresh:</span><button OnClick="Reload()"><i class="fa fa-refresh" aria-hidden="true"></i></button>
-			<hr style="border: 2px dashed #666666">
-			<span class="label_ark">Last Check:</span>
-			<i id="lastcheck" class="fa fa-question" aria-hidden="true"></i>
-		</div>
-
-		<div style="margin-left:3%; padding-top:1%">
+		<div style="margin-left:5%; padding-top:1%; float:left">
 			<h1>Discord Server:</h1>
 			<iframe src="https://discordapp.com/widget?id=220923913549381632&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0"></iframe>
 		</div>

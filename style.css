@@ -114,11 +114,10 @@ li.dropdown {
 
 /* FTB STATUS */
 .statusbox_ftb {
-	border: 2px solid #dcdcdc;
+	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
 	background-color: #f5f5f5;
 	padding: 1%;
-	margin-left: 3%;
 	width: 20%;
 }
 
@@ -134,12 +133,11 @@ li.dropdown {
 
 /* ARK STATUS */
 .statusbox_ark {
-	border: 2px solid #dcdcdc;
+	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
 	background-color: #f5f5f5;
-	padding: 1%;
-	margin-left: 3%;
-	width: 25%;
+	padding: 4%;
+	width: 100%;
 }
 
 /* ARK STATUS */
