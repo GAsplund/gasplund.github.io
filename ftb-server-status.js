@@ -6,7 +6,6 @@ var classes = {
 	error: "fa-question",
 	false: "fa-times",
 	true: "fa-check",
-	"success": "fa-check",
 };
 
 var allclasses = "";
@@ -73,7 +72,3 @@ function display(data) {
 		setclass(status, error);
 	}
 }
-
-$(document).ready(function() {
-	q('//lentium.xyz', display);
-});
