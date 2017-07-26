@@ -9,30 +9,32 @@ var classes = {
 };
 
 var allclasses = "";
-	for(i in classes) {
+
+for(i in classes) {
 	allclasses += ' '+classes[i];
 };
 
 function q(addr, cb) {
 	$.ajax({
-	url: rq,
-	type: 'GET',
-	dataType: 'json',
-	data: {ip: addr, players: true},
-})
+		url: rq,
+		type: 'GET',
+		dataType: 'json',
+		data: {ip: addr, players: true},
+	})
 
-.done(function(data) {
-	console.log("success");
-	console.log(data);
-	cb(data);
-})
+	.done(function(data) {
+		console.log("success");
+		console.log(data);
+		cb(data);
+	})
 
-.fail(function(data) {
-	console.log("error");
-})
+	.fail(function(data) {
+		console.log("error");
+	})
 
-.always(function() {
-});}
+	.always(function() {
+	});
+}
 
 function setclass(o, c) {
 	o.removeClass(allclasses);
@@ -47,15 +49,14 @@ function settext(o, t) {
 
 function display(data) {
 	var
+		online = $('#online'),
 		playersnow = $('#playersnow'),
 		playersmax = $('#playersmax'),
 		version = $('#version'),
-		online = $('#online'),
 		status = $('#status'),
 		updated = $('#checked'),
 		d = new Date(data.last_updated*1000);
-		moment.locale('moment');
-		
+		moment.locale('*');
 		setclass(online, data.online);
 
 	if (data.online) {
