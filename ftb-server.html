@@ -42,7 +42,7 @@
 			<h1><i class="fa fa-cube" aria-hidden="true"></i> FTB Server:</h1>
 			<h2>IP: gasplund.mc-server.net</h2>
 			<button id="copy" data-clipboard-action="copy">Copy</button>
-			<script>var clipboard = new Clipboard('#copy');</script>
+			<script>var clipboard = new Clipboard('#copy', {text: function() {return 'gasplund.mc-server.net';}});</script>
 			<h2>Port: 25565</h2>
 		</div>
 
