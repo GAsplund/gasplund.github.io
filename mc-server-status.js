@@ -52,10 +52,12 @@ if (data.online) {
 settext(np, data.players.now);
 settext(version, data.server.name);
 settext(motd, data.motd);
+settext(status, data.status);
 } else {
 setclass(np, error);
 setclass(version, error);
 setclass(motd, error);
+setclass(status, error);
 }
 }
 $(document).ready(function() {
