@@ -18,7 +18,7 @@ function q(addr, cb) {
 	$.ajax({
 		url: rq,
 		type: 'GET',
-		dataType: 'html',
+		dataType: 'json',
 		data: {ip: addr, players: true},
 	})
 
@@ -33,8 +33,8 @@ function q(addr, cb) {
 	})
 
 	.always(function() {
-		});
-	}
+	});
+}
 
 function setclass(o, c) {
 	o.removeClass(allclasses);
@@ -49,28 +49,31 @@ function settext(o, t) {
 
 function display(data) {
 	var
-		players = $('#players'),
-		map = $('#map'),
-		version = $('#version'),
 		is_online = $('#online'),
+		players = $('#players'),
+		maxplayers = $('#maxplayers'),
+		version = $('#version'),
 		last_check = $('#lastcheck'),
-		last_online = $('#lastonline'),
+		updated = $('#updated'),
+		d = new Date(data.last_updated*1000);
+		moment.locale('*');
+		settext(updated, moment(d).fromNow());
 		setclass(is_online, data.is_online);
 
 	if (data.is_online) {
 		settext(players, data.players);
+		settext(maxplayers, data.maxplayers);
 		settext(version, data.version);
 		settext(map, data.map);
 		settext(last_check, data.last_check);
-		settext(last_online, data.last_online);
 	}
 
 	else {
 		setclass(players, error);
+		setclass(maxplayers, error);
 		setclass(version, error);
 		setclass(map, error);
 		setclass(last_check, error);
-		setclass(last_online, error);
 	}
 }
 
