@@ -6,6 +6,7 @@ var classes = {
 	error: "fa-question",
 	false: "fa-times",
 	true: "fa-check",
+	"success": "fa-check",
 };
 
 var allclasses = "";
