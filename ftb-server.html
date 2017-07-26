@@ -28,6 +28,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
 		<script src="ftb-server-status.js"></script>
 		<script>function Reload() {location.reload();}</script>
+		<script>var clipboard = new Clipboard('#copy', {text: function() {return 'gasplund.mc-server.net';}});</script>
 		
 	</head>
 
@@ -41,8 +42,7 @@
 		<div style="padding-left:3%; padding-top:1%">
 			<h1><i class="fa fa-cube" aria-hidden="true"></i> FTB Server:</h1>
 			<h2>IP: gasplund.mc-server.net</h2>
-			<button id="copy" data-clipboard-action="copy">Copy</button>
-			<script>var clipboard = new Clipboard('#copy', {text: function() {return 'gasplund.mc-server.net';}});</script>
+			<button id="copy" data-clipboard-action="copy"><i class="fa fa-clipboard" aria-hidden="true"></i></button>
 			<h2>Port: 25565</h2>
 		</div>
 
