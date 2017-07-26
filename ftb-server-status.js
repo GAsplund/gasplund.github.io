@@ -52,7 +52,7 @@ function display(data) {
 		version = $('#version'),
 		online = $('#online'),
 		status = $('#status'),
-		updated = $('#updated'),
+		updated = $('#checked'),
 		d = new Date(data.last_updated*1000);
 		moment.locale('moment');
 		
