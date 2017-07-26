@@ -52,6 +52,10 @@ function display(data) {
 		version = $('#version'),
 		online = $('#online'),
 		status = $('#status'),
+		updated = $('#updated'),
+		d = new Date(data.last_updated*1000);
+		moment.locale('*');
+		
 		setclass(online, data.online);
 
 	if (data.online) {
