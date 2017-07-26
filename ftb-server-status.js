@@ -25,7 +25,6 @@ function q(addr, cb) {
 	console.log("success");
 	console.log(data);
 	cb(data);
-	cb("success");
 })
 
 .fail(function(data) {
@@ -46,7 +45,7 @@ function settext(o, t) {
 	o.html(t);
 }
 
-function display(data, "success") {
+function display(data) {
 	var
 		np = $('#players'),
 		version = $('#version'),
@@ -63,7 +62,7 @@ function display(data, "success") {
 		settext(np, data.players.now);
 		settext(version, data.server.name);
 		settext(motd, data.motd);
-		settext(status, "success".status);
+		settext(status, data.status);
 	}
 
 	else {
