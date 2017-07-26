@@ -47,7 +47,7 @@ function settext(o, t) {
 
 function display(data) {
 	var
-		playersnow = $('#players'),
+		playersnow = $('#playersnow'),
 		playersmax = $('#playersmax'),
 		version = $('#version'),
 		online = $('#online'),
