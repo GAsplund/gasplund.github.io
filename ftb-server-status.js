@@ -57,6 +57,7 @@ function display(data) {
 		updated = $('#checked'),
 		d = new Date(data.last_updated*1000);
 		moment.locale('*');
+		settext(updated, moment(d).fromNow());
 		setclass(online, data.online);
 
 	if (data.online) {
