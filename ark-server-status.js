@@ -9,31 +9,32 @@ var classes = {
 };
 
 var allclasses = "";
-	for(i in classes) {
+
+for(i in classes) {
 	allclasses += ' '+classes[i];
 };
 
 function q(addr, cb) {
 	$.ajax({
-	url: rq,
-	type: 'GET',
-	dataType: 'text',
-	data: {ip: addr, players: true},
-})
+		url: rq,
+		type: 'GET',
+		dataType: 'html',
+		data: {ip: addr, players: true},
+	})
 
-.done(function(data) {
-	console.log("success");
-	console.log(data);
-	cb(data);
-})
+	.done(function(data) {
+		console.log("success");
+		console.log(data);
+		cb(data);
+	})
 
-.fail(function(data) {
-	console.log("error");
-})
+	.fail(function(data) {
+		console.log("error");
+	})
 
-.always(function() {
-	});
-}
+	.always(function() {
+		});
+	}
 
 function setclass(o, c) {
 	o.removeClass(allclasses);
