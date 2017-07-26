@@ -54,7 +54,7 @@ function display(data) {
 		status = $('#status'),
 		updated = $('#updated'),
 		d = new Date(data.last_updated*1000);
-		moment.locale('*');
+		moment.locale('moment');
 		
 		setclass(online, data.online);
 
