@@ -53,6 +53,7 @@ function display(data) {
 		players = $('#players'),
 		maxplayers = $('#maxplayers'),
 		version = $('#version'),
+	    	map = $('#map'),
 		last_check = $('#lastcheck'),
 		updated = $('#updated'),
 		d = new Date(data.last_updated*1000);
