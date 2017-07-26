@@ -43,6 +43,7 @@ version = $('#version'),
 online = $('#online'),
 motd = $('#motd'),
 updated = $('#updated'),
+status = $('#status'),
 d = new Date(data.last_updated*1000);
 moment.locale('*');
 settext(updated, moment(d).fromNow());
