@@ -25,11 +25,6 @@ body {
 	color: #ffffff;
 }
 
-#dev-status {
-	padding-top: 15%;
-	padding-left: 35%;
-}
-
 /* ########################################################################################## */
 /* ####################################### NAVIGATION ####################################### */
 /* ########################################################################################## */
@@ -87,6 +82,59 @@ li.dropdown {
 }
 
 /* ########################################################################################## */
+/* ########################################## DIVS ########################################## */
+/* ########################################################################################## */
+
+/* PAGE STATUS DIV */
+#dev-status {
+	padding-top: 15%;
+	padding-left: 35%;
+	float: left;
+}
+
+/* ARK STATUS DIV */
+#ark-status {
+	padding-top: 1%;
+	padding-left: 3%;
+	float: left;
+}
+
+/* FTB STATUS DIV */
+#ftb-status {
+	padding-top: 1%;
+	padding-left: 3%;
+	float: left;
+}
+
+/* DISCORD DIV */
+#discord {
+	padding-top: 1%;
+	padding-left: 3%;
+	float: left;
+}
+
+/* COMPUTERCRAFT DIV */
+#computercraft {
+	padding-top: 1%;
+	padding-left: 3%;
+	float: left;
+}
+
+/* ABOUTME DIV */
+#aboutme {
+	padding-top: 1%;
+	padding-left: 3%;
+	float: left;
+}
+
+/* RENDERS DIV */
+#renders {
+	padding-top: 1%;
+	padding-left: 3%;
+	float: left;
+}
+
+/* ########################################################################################## */
 /* #################################### DOWNLOAD BUTTONS #################################### */
 /* ########################################################################################## */
 
@@ -124,8 +172,8 @@ li.dropdown {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
 	background-color: #f5f5f5;
-	padding: 1%;
-	width: 18%;
+	padding: 4%;
+	width: 100%;
 }
 
 /* FTB STATUS */
@@ -144,7 +192,7 @@ li.dropdown {
 	border-radius: 6px;
 	background-color: #f5f5f5;
 	padding: 4%;
-	width: 70%;
+	width: 80%;
 }
 
 /* ARK STATUS */
@@ -182,7 +230,7 @@ li.dropdown {
 
 	/* FTB STATUS */
 	.statusbox_ftb {
-		width: 70%;
+		width: 80%;
 	}
 
 	/* WEB DEV STATUS */
