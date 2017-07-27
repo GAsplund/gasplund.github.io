@@ -173,4 +173,9 @@ li.dropdown {
 		padding-left: 3%;
 	}
 
+	/* FTB STATUS */
+	.statusbox_ftb {
+	width: 70%;
+	}
+
 }
