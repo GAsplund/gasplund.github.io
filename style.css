@@ -132,6 +132,7 @@ li.dropdown {
 	padding-top: 1%;
 	padding-left: 3%;
 	float: left;
+	width: 90%;
 }
 
 /* ########################################################################################## */
@@ -230,7 +231,7 @@ li.dropdown {
 
 	/* FTB STATUS */
 	.statusbox_ftb {
-		width: 80%;
+		width: 90%;
 	}
 
 	/* WEB DEV STATUS */
