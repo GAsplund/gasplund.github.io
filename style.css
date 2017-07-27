@@ -178,4 +178,10 @@ li.dropdown {
 		width: 70%;
 	}
 
+	/* WEB DEV STATUS */
+	#dev-status {
+		padding-top: 50%;
+		padding-left: 20%;
+	}
+
 }
