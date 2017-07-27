@@ -160,6 +160,7 @@ li.dropdown {
 	#logo h1 {
 		float: inherit;
 		padding-left: inherit;
+		text-align: center;
 	}
 
 	/* NAVIGATION */
