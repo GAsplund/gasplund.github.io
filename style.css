@@ -139,6 +139,8 @@ li.dropdown {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
 	background-color: #f5f5f5;
+	padding: 4%;
+	font-size: 24px;
 }
 
 /* ########################################################################################## */
