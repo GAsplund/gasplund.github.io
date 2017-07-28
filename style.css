@@ -151,6 +151,7 @@ li.dropdown {
 	background-color: #f5f5f5;
 	padding: 4%;
 	width: 70%;
+	float: left;
 }
 
 /* ONLINE STATUS LABEL */
