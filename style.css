@@ -135,7 +135,7 @@ li.dropdown {
 }
 
 /* FTB STATUS IP|PORT DIV */
-#ftb-status-ip {
+#status-ip {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
 	background-color: #f5f5f5;
