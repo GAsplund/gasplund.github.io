@@ -60,19 +60,18 @@ function display(data) {
 		moment.locale('*');
 		settext(updated, moment(d).fromNow());
 		setclass(online, data.online);
+		setclass(status, data.status);
 
 	if (data.online) {
 		settext(playersnow, data.players.now);
 		settext(playersmax, data.players.max);
 		settext(version, data.server.name);
-		settext(status, data.status);
 	}
 
 	else {
 		setclass(playersnow, error);
 		setclass(playersmax, error);
 		setclass(version, error);
-		setclass(status, error);
 	}
 }
 
