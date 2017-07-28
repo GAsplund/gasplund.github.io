@@ -23,7 +23,6 @@ function q(addr, cb) {
 	})
 
 	.done(function(data) {
-		console.log("success");
 		console.log(data);
 		cb(data);
 	})
