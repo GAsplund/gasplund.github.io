@@ -75,7 +75,9 @@ li.dropdown {
 	text-align: left;
 }
 
-.dropdown-content a:hover {background-color: DimGray}
+.dropdown-content a:hover {
+	background-color: DimGray;
+}
 
 .dropdown:hover .dropdown-content {
 	display: block;
@@ -130,8 +132,8 @@ li.dropdown {
 #renders {
 	padding-top: 1%;
 	padding-left: 3%;
-	float: left;
 	width: 90%;
+	float: left;
 }
 
 /* IP|PORT STATUS DIV */
@@ -170,7 +172,6 @@ li.dropdown {
 
 .ComputercraftButton {
 	background-color: #f5f5f5;
-	-webkit-border-radius: 6px;
 	border-radius: 6px;
 	border: 1px solid #dcdcdc;
 	display: inline-block;
