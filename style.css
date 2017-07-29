@@ -105,7 +105,8 @@ li.dropdown {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
 	background-color: white;
-	padding: 4%;
+	padding: 2%;
+	float: left;
 }
 
 /* RENDERS DIV */
