@@ -108,6 +108,13 @@ li.dropdown {
 	float: left;
 }
 
+/* PROJECTS DIV */
+#projects {
+	padding-top: 1%;
+	padding-left: 3%;
+	float: left;
+}
+
 /* COMPUTERCRAFT DIV */
 #computercraft {
 	padding-top: 1%;
