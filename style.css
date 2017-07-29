@@ -153,18 +153,18 @@ li.dropdown {
 /* ONLINE STATUS LABEL */
 .label {
 	text-align: right;
-	float: left;
 	margin-right: 1em;
 	min-width: 4em;
 	color: #666666;
 	font-weight: bold;
+	float: left;
 }
 
 /* ########################################################################################## */
 /* #################################### DOWNLOAD BUTTONS #################################### */
 /* ########################################################################################## */
 
-.ComputercraftButton {
+#ComputercraftButton {
 	background-color: #f5f5f5;
 	border-radius: 6px;
 	border: 1px solid #dcdcdc;
@@ -179,11 +179,11 @@ li.dropdown {
 	text-shadow: 0px 1px 0px #ffffff;
 }
 
-.ComputercraftButton:hover {
+#ComputercraftButton:hover {
 	background-color: #ebebeb;
 }
 
-.ComputercraftButton:active {
+#ComputercraftButton:active {
 	position: relative;
 	top: 1px;
 }
