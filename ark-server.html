@@ -37,7 +37,7 @@
 		<script>w3.includeHTML();</script>
 		<!-- Place code under this comment -->
 
-		<div id="ark-status">
+		<div id="padding">
 
 			<h1>ARK Server:</h1>
 			<div id="status-ip">
@@ -50,18 +50,18 @@
 			<h1 style="padding-top:5%; float:left"><i class="fa fa-power-off" aria-hidden="true"></i> Server Status:</h1>
 			<br>
 
-			<div class="statusbox">
-				<span class="label">Online:</span><i id="online" class="fa fa-question" aria-hidden="true"></i>
+			<div id="statusbox">
+				<span id="label">Online:</span><i id="online" class="fa fa-question" aria-hidden="true"></i>
 				<br>
-				<span class="label">Players:</span><i id="players" class="fa fa-question" aria-hidden="true"></i><span>/</span><i id="maxplayers" class="fa fa-question" aria-hidden="true"></i>
+				<span id="label">Players:</span><i id="players" class="fa fa-question" aria-hidden="true"></i><span>/</span><i id="maxplayers" class="fa fa-question" aria-hidden="true"></i>
 				<br>
-				<span class="label">Version:</span><i id="version" class="fa fa-question" aria-hidden="true"></i>
+				<span id="label">Version:</span><i id="version" class="fa fa-question" aria-hidden="true"></i>
 				<br>
-				<span class="label">Map:</span><i id="map" class="fa fa-question" aria-hidden="true"></i>
+				<span id="label">Map:</span><i id="map" class="fa fa-question" aria-hidden="true"></i>
 				<hr style="border: 2px dashed #666666">
-				<span class="label">Refresh:</span><button OnClick="Reload()" title="Click to reload"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+				<span id="label">Refresh:</span><button OnClick="Reload()" title="Click to reload"><i class="fa fa-refresh" aria-hidden="true"></i></button>
 				<hr style="border: 2px dashed #666666">
-				<span class="label" title="Last Checked">Check:</span><i id="lastcheck" class="fa fa-question" aria-hidden="true" title="Last checked on" style="width:50%"></i>
+				<span id="label" title="Last Checked">Check:</span><i id="lastcheck" class="fa fa-question" aria-hidden="true" title="Last checked on" style="width:50%"></i>
 			</div>
 
 			<br>
