@@ -100,6 +100,7 @@ li.dropdown {
 	border-radius: 6px;
 	background-color: white;
 	padding: 2%;
+	width: 56%;
 }
 
 /* IP|PORT STATUS DIV */
@@ -145,7 +146,6 @@ li.dropdown {
 	font-weight: bold;
 	padding: 5px 10px;
 	text-decoration: none;
-	width: 56%;
 }
 
 #ComputercraftButton:hover {
