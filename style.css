@@ -94,8 +94,8 @@ li.dropdown {
 	float: left;
 }
 
-/* COMPUTERCRAFT DIV */
-#computercraft {
+/* DOWNLOADS STYLE DIV */
+#downloads {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
 	background-color: white;
@@ -103,7 +103,7 @@ li.dropdown {
 	width: 51%;
 }
 
-/* IP|PORT STATUS DIV */
+/* IP|PORT STYLE DIV */
 #status-ip {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
@@ -135,7 +135,7 @@ li.dropdown {
 /* #################################### DOWNLOAD BUTTONS #################################### */
 /* ########################################################################################## */
 
-#ComputercraftButton {
+#DownButton {
 	background-color: #f5f5f5;
 	border-radius: 6px;
 	border: 2px solid #dcdcdc;
@@ -148,11 +148,11 @@ li.dropdown {
 	text-decoration: none;
 }
 
-#ComputercraftButton:hover {
+#DownButton:hover {
 	background-color: #ebebeb;
 }
 
-#ComputercraftButton:active {
+#DownButton:active {
 	position: relative;
 	top: 1px;
 }
