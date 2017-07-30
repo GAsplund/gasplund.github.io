@@ -104,7 +104,7 @@ li.dropdown {
 }
 
 /* IP|PORT STYLE DIV */
-#status-ip {
+.status-ip {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
 	background-color: white;
@@ -113,7 +113,7 @@ li.dropdown {
 }
 
 /* ONLINE STATUS BOX */
-#statusbox {
+.statusbox {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
 	background-color: white;
@@ -122,7 +122,7 @@ li.dropdown {
 }
 
 /* ONLINE STATUS LABEL */
-#label {
+.label {
 	text-align: right;
 	margin-right: 1em;
 	min-width: 4em;
