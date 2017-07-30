@@ -1,5 +1,5 @@
 ﻿# GAsplund's Website
 
-This is my own site yo. (Work in progress)
+Website: [Click Here](https://gasplund.github.io)
 
-https://gasplund.github.io/
+Copyright © 2017 GAsplund. All Rights Reserved.
