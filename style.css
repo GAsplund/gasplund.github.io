@@ -106,7 +106,6 @@ li.dropdown {
 	border-radius: 6px;
 	background-color: white;
 	padding: 2%;
-	float: left;
 }
 
 /* RENDERS DIV */
@@ -124,7 +123,6 @@ li.dropdown {
 	background-color: white;
 	padding: 4%;
 	font-size: 20px;
-	float: left;
 }
 
 /* ONLINE STATUS BOX */
