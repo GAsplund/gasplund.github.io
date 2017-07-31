@@ -131,10 +131,11 @@ li.dropdown {
 	float: left;
 }
 
+/* SOCIAL MEDIA LINKS DIV */
 .socialmedia  a {
-	font-size: 60px;
+	font-size: 64px;
 	text-decoration: none;
-	letter-spacing: 0.2em;
+	letter-spacing: 0.3em;
 }
 
 /* ########################################################################################## */
