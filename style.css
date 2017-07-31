@@ -89,8 +89,8 @@ li.dropdown {
 
 /* PADDING DESIGN DIV */
 #padding {
-	padding-top: 1%;
-	padding-left: 3%;
+	margin-top: 1%;
+	margin-left: 3%;
 	float: left;
 }
 
@@ -136,12 +136,6 @@ li.dropdown {
 	font-size: 64px;
 	text-decoration: none;
 	letter-spacing: 0.3em;
-}
-
-.music {
-	margin-top: 1%;
-	margin-left: 3%;
-	float: left;
 }
 
 /* ########################################################################################## */
