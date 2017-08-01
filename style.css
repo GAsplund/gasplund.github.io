@@ -137,6 +137,13 @@ li.dropdown {
 	letter-spacing: 0.3em;
 }
 
+/* DISCORD DIV */
+.discord {
+	margin-top: 1%;
+	margin-left: 10%;
+	float: left;
+}
+
 /* ########################################################################################## */
 /* #################################### DOWNLOAD BUTTONS #################################### */
 /* ########################################################################################## */
@@ -177,8 +184,9 @@ li.dropdown {
 	}
 
 	/* NAVIGATION */
-	ul {
-		padding-left: inherit;
-	}
+	ul {padding-left: inherit}
+
+	/* DISCORD */
+	.discord {margin-left: 3%}
 
 }
