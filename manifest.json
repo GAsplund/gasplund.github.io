@@ -1,0 +1,16 @@
+{
+  "name": "GAsplund's Website",
+  "short_name": "GAsplund",
+  "description": "GAsplund's Website",
+  "lang": "en-US",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#e8e8e8",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "256x256"
+    }
+  ],
+  "background_color": "#e8e8e8"
+}
