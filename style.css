@@ -131,10 +131,17 @@ li.dropdown {
 }
 
 /* SOCIAL MEDIA LINKS DIV */
-.socialmedia  a {
+.socialmedia a {
 	font-size: 64px;
 	text-decoration: none;
 	letter-spacing: 0.3em;
+}
+
+/* PROGRAMS DIV */
+.programs {
+	margin-top: 1%;
+	margin-left: 3%;
+	float: left;
 }
 
 /* ########################################################################################## */
