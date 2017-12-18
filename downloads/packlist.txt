@@ -25,7 +25,7 @@
 			"name": "Nostalgic Wynn [Normal]",
 			"file_name": "wynnostalgia_normal",
 			"description": "This pack allows you to experience Wynncraft in it's pre-gavel days when there wasn't any official resource pack.",
-			"md5": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+			"md5": "3B3DF1B1DB06D5E610ABC220DFBED114",
 			"download_direct": "https://gasplund.github.io/downloads/Nostalgic%20Wynn.zip",
 			"resolutions":[16],
 			"version": "1.4-normal",
