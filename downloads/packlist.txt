@@ -8,7 +8,7 @@
 			"resolutions":[16, 32],
 			"version": "1.0",
 			"mc-compatibility": ["1.8.3", "1.9", "1.10"],
-			"image_preview":"i.imgur.com/insertimagehere.png"
+			"image_preview":"i.imgur.com/Xb4Tcii.jpg"
 	},
 	"2": {
 			"name": "Pack Number Two",
@@ -19,6 +19,6 @@
 			"resolutions":[16, 32, 64],
 			"version": "1.2",
 			"mc-compatibility": ["Beta 1.8.1"],
-			"image_preview":"i.imgur.com/insertimagehere.png"
+			"image_preview":"i.imgur.com/U6qZUpr.png"
 	}
 }
