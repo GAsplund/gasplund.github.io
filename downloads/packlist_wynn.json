@@ -2,7 +2,7 @@
 	"1": {
 		"name": "Wynnter Theme",
 		"description": "This pack changes grass and other foliage to have a white color to create a winter-y feeling. Must have Wynnpack as a base to work properly.",
-		"resolutions": "16",
+		"resolutions": "16x16",
 		"editions": {
 			"1": {
 				"name": "White Leaves",
@@ -27,7 +27,7 @@
 		"description": "This pack allows you to experience Wynncraft in it's pre-gavel days when there wasn't any official resource pack.",
 		"md5": "3B3DF1B1DB06D5E610ABC220DFBED114",
 		"download": "https://gasplund.github.io/downloads/Nostalgic%20Wynn.zip",
-		"resolutions": "16",
+		"resolutions": "16x16",
 		"editions": {
 			"1": {
 				"name": "Normal",
