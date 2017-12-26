@@ -228,6 +228,10 @@ body {
 		padding-left: initial;
 	}
 
+	li.dropdown {
+		display: initial;
+	}
+
 	/* MENU BUTTON + LOGO */
 	#logo {
 		position: fixed;
