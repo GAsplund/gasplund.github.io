@@ -232,6 +232,10 @@ body {
 		display: initial;
 	}
 
+	.dropdown-content a {
+		text-align: center;
+	}
+
 	/* MENU BUTTON + LOGO */
 	#logo {
 		position: fixed;
