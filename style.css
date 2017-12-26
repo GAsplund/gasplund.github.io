@@ -173,7 +173,7 @@ body {
 /* ######################################### MOBILE ######################################### */
 /* ########################################################################################## */
 
-@media only screen and (max-device-width: 500px) {
+@media screen and (max-width: 500px) {
 
 	/* NAVIGATION */
 	.sidenav {
@@ -235,6 +235,8 @@ body {
 	/* MENU BUTTON + LOGO */
 	#logo {
 		position: fixed;
+		padding-right: 100%;
+		background-color: black;
 	}
 
 	/* DISCORD */
