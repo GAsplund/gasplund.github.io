@@ -237,11 +237,15 @@ body {
 		text-align: center;
 	}
 
-	/* MENU BUTTON + LOGO */
+	.navmenu {
+		float: left;
+		clear: none;
+	}
+
+	/* LOGO */
 	#logo h1 {
 		position: fixed;
 		padding-right: 100%;
-		background-color: black;
 	}
 
 	/* DISCORD */
