@@ -210,10 +210,10 @@ body {
 		font-size: 32px;
 		cursor: pointer;
 		padding: 0px 15px 5px 15px;
+		padding-top: 1%;
 		color: white;
 		background-color: black;
 		opacity: 0.5;
-		float: left;
 	}
 
 	.menu-button:hover {
