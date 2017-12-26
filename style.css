@@ -84,17 +84,17 @@ li.dropdown {
 }
 
 /* ########################################################################################## */
-/* ########################################## DIVS ########################################## */
+/* ######################################### CLASSES ######################################## */
 /* ########################################################################################## */
 
-/* FORMAT DESIGN DIV */
+/* FORMAT */
 .format {
 	margin: 1% 0% 0% 3%;
 	padding-bottom: 30px;
 	float: left;
 }
 
-/* DOWNLOADS STYLE DIV */
+/* DOWNLOADS STYLE */
 .downloads {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
@@ -103,7 +103,7 @@ li.dropdown {
 	width: 51%;
 }
 
-/* IP|PORT STYLE DIV */
+/* IP|PORT STYLE */
 .status-ip {
 	border: 2px dashed #dcdcdc;
 	border-radius: 6px;
@@ -130,7 +130,7 @@ li.dropdown {
 	float: left;
 }
 
-/* SOCIAL MEDIA LINKS DIV */
+/* SOCIAL MEDIA LINKS */
 .socialmedia a {
 	font-size: 64px;
 	text-decoration: none;
