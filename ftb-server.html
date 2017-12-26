@@ -5,12 +5,8 @@
 	<head>
 
 		<!-- WEBSITE -->
-		<title>GAsplund's Website</title>
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<title>FTB Server</title>
 		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<link rel="dns-prefetch" href="https://gasplund.github.io/">
-		<link rel="prefetch" href="style.css">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 		<!-- META -->
 		<meta charset="UTF-8">
@@ -24,7 +20,11 @@
 		<meta property="og:image" content="favicon.ico">
 		<meta property="og:description" content="GAsplund's Website">
 
+		<!-- STYLE -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+
 		<!-- SCRIPT -->
+		<script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
 		<script src="https://www.w3schools.com/lib/w3.js"></script>
 		<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
 		<script src="https://momentjs.com/downloads/moment.min.js"></script>
@@ -41,27 +41,27 @@
 
 		<div class="format">
 
-			<h1><i class="fa fa-cube" aria-hidden="true"></i> FTB Server:</h1>
+			<h1><i class="fas fa-cube"></i> FTB Server:</h1>
 			<div class="status-ip">
 			<span>IP: gasplund.mc-server.net</span>
 			<br style="margin-top:3%; display:block">
 			<span>Port: 25565</span>
 			</div>
 
-			<h1 style="margin-top:20%"><i class="fa fa-power-off" aria-hidden="true"></i> Server Status:</h1>
+			<h1 style="margin-top:20%"><i class="fas fa-power-off"></i> Server Status:</h1>
 
 			<div class="statusbox" style="width:80%">
-				<span class="label">Online:</span><i id="online" class="fa fa-question" aria-hidden="true"></i>
+				<span class="label">Online:</span><i id="online" class="fas fa-question"></i>
 				<br>
-				<span class="label">Players:</span><i id="playersnow" class="fa fa-question" aria-hidden="true"></i><span>/</span><i id="playersmax" class="fa fa-question" aria-hidden="true"></i>
+				<span class="label">Players:</span><i id="playersnow" class="fas fa-question"></i><span>/</span><i id="playersmax" class="fas fa-question"></i>
 				<br>
-				<span class="label">Version:</span><i id="version" class="fa fa-question" aria-hidden="true"></i>
+				<span class="label">Version:</span><i id="version" class="fas fa-question"></i>
 				<hr style="border: 2px dashed #666666">
-				<span class="label">Refresh:</span><button OnClick="Reload()" title="Click to reload"><i class="fa fa-refresh" aria-hidden="true"></i></button>
+				<span class="label">Refresh:</span><button OnClick="Reload()" title="Click to reload"><i class="fas fa-sync-alt"></i></button>
 				<br>
-				<span class="label">Ping:</span><i id="status" class="fa fa-question" aria-hidden="true"></i>
+				<span class="label">Ping:</span><i id="status" class="fas fa-question"></i>
 				<hr style="border: 2px dashed #666666">
-				<span class="label" title="Last Checked">Check:</span><i id="checked" class="fa fa-question" aria-hidden="true" title="Last checked on" style="width:50%"></i>
+				<span class="label" title="Last Checked">Check:</span><i id="checked" class="fas fa-question" title="Last checked on" style="width:50%"></i>
 			</div>
 
 		</div>
