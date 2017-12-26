@@ -233,6 +233,7 @@ body {
 	}
 
 	.dropdown-content a {
+		display: initial;
 		text-align: center;
 	}
 
