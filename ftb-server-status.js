@@ -3,10 +3,10 @@ var rq = 'https://mcapi.us/server/status?ip=gasplund.mc-server.net';
 var error = 'unknown';
 
 var classes = {
-	error: "fa-question",
-	false: "fa-times",
-	true: "fa-check",
-	success: "fa-check",
+	error: "fas fa-question",
+	false: "fas fa-times",
+	true: "fas fa-check",
+	success: "fas fa-check",
 };
 
 var allclasses = "";
