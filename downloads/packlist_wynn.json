@@ -8,19 +8,21 @@
 				"name": "White Leaves",
 				"download": "https://gasplund.github.io/downloads/wynntertheme_white.zip",
 				"md5": "21CA6D3EC2E15CA7CBF0114ED30EC45E",
-				"file_name": "Wynnter Theme - White Leaves"
+				"file_name": "Wynnter Theme - White Leaves",
+				"edition_preview": "https://i.imgur.com/HUAfZjP.png"
 			},
 			"2": {
 				"name": "Green Leaves",
 				"download": "https://gasplund.github.io/downloads/wynntertheme_green.zip",
 				"md5": "71B42B5AF795BBB5544DFC189E780B39",
-				"file_name": "Wynnter Theme - Green Leaves"
+				"file_name": "Wynnter Theme - Green Leaves",
+				"edition_preview": "https://i.imgur.com/yrOTMUr.png"
 			}
 		},
 		"creator": "GAsplund",
 		"latest_version": "1.0",
 		"compatibility": "1.8.3 and up",
-		"image_preview": "https://i.imgur.com/HUAfZjP.png"
+		"image_preview": "https://i.imgur.com/yrOTMUr.png"
 	},
 	"2": {
 		"name": "Nostalgic Wynn",
