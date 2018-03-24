@@ -1,5 +1,6 @@
 {
 	"1": {
+		"external_source": false,
 		"name": "Connected Clear Glass",
 		"description": "Resource pack that makes your glass clear, also allows it to connect.\n\ngo to Options > Video Settings > Quality > Connected Textures = Fancy. (you need OptiFine installed)\n\nhttps://xaphex.github.io/",
 		"resolutions": "16x16 | 32x32",
