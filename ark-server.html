@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+
+		<!-- WEBSITE -->
+		<title>ARK Server</title>
+		<link rel="icon" type="image/png" href="files/favicon.png">
+
+		<!-- META -->
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<!-- OPEN GRAPH PROTOCOL -->
+		<meta property="og:site_name" content="GAsplund's Website">
+		<meta property="og:title" content="GAsplund's Website">
+		<meta property="og:type" content="website">
+		<meta property="og:url" content="https://gasplund.github.io">
+		<meta property="og:image" content="files/favicon.png">
+		<meta property="og:description" content="GAsplund's Website">
+
+		<!-- STYLES & SCRIPT -->
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://momentjs.com/downloads/moment.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+		<script src="files/ark-server-status.js"></script>
+		<script src="files/fontawesome-all.min.js"></script>
+		<script src="files/menubar.js"></script>
+		<script>function Reload() {location.reload();}</script>
+
+	</head>
+
+	<body>
+
+		<div id="logo"><h1>GAsplund</h1></div>
+		<span class="menu-button" onclick="openNav()"><i class="fas fa-bars"></i></span>
+		<ul id="menubar" class="topnav sidenav">
+			<li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+			<li><a href="aboutme"><i class="fas fa-user"></i> About Me</a></li>
+			<li><a href="downloads"><i class="fas fa-download"></i> Downloads</a></li>
+			<li><a href="work"><i class="fas fa-briefcase"></i> My Work</a></li>
+			<li><a href="ftb-server"><i class="fas fa-cube"></i> FTB Server</a></li>
+			<li><a href="ark-server"><i class="fab fa-asymmetrik"></i> ARK Server</a></li>
+		</ul>
+		<!-- Place code under this comment -->
+
+		<div class="format">
+
+			<h1><i class="fab fa-asymmetrik"></i> ARK Server:</h1>
+			<div class="status-ip">
+			<span>IP: gasplund.mc-server.net</span>
+			<br>
+			<span>Port: 27015</span>
+			<br>
+			<br>
+			<span><a href="steam://connect/gasplund.mc-server.net:27015/gasplund2017">Click here to join</a></span>
+			</div>
+
+			<h1 style="margin-top:5%"><i class="fas fa-power-off"></i> Server Status:</h1>
+
+			<div class="statusbox">
+				<span class="label">Online:</span><i id="online" class="fas fa-question"></i>
+				<br>
+				<span class="label">Players:</span><i id="players" class="fas fa-question"></i><span>/</span><i id="maxplayers" class="fas fa-question"></i>
+				<br>
+				<span class="label">Version:</span><i id="version" class="fas fa-question"></i>
+				<br>
+				<span class="label">Map:</span><i id="map" class="fas fa-question"></i>
+				<hr style="border: 2px dashed #666666">
+				<span class="label">Refresh:</span><button OnClick="Reload()" title="Click to reload"><i class="fas fa-sync-alt"></i></button>
+				<hr style="border: 2px dashed #666666">
+				<span class="label" title="Last Checked">Check:</span><i id="lastcheck" class="fas fa-question" title="Last checked on"></i>
+			</div>
+
+		</div>
+
+	</body>
+
+</html>
