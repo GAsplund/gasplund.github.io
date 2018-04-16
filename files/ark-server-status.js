@@ -1,5 +1,4 @@
 var rq = 'https://ark-servers.net/api/?object=servers&element=detail&key=UGkfgK5PNgpdgwGmGHKGcUgflPIjqIOE9M2';
-var rr = ''
 
 var error = 'unknown';
 
@@ -56,11 +55,10 @@ function display(data) {
         map = $('#map'),
         lastcheck = $('#last_check'),
         updated = $('#updated')
-        settext(updated, lastcheck);
+        settext(lastcheck);
         setclass(is_online, data.is_online);
 
     if (data.is_online) {
-        /* Add the corresponding line data */
         settext(players, data.players);
         settext(maxplayers, data.maxplayers);
         settext(version, data.version);
@@ -70,6 +68,10 @@ function display(data) {
     }
 
     else {
-        /* Just dont add the data I guess */
+        setclass(players, error);
+        setclass(maxplayers, error);
+        setclass(version, error);
+        setclass(map, error);
+        setclass(last_check, error);
     }
 }
