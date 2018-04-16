@@ -48,17 +48,17 @@ function settext(o, t) {
 
 function display(data) {
     var
+        name = $('#name'),
         is_online = $('#online'),
         players = $('#players'),
         maxplayers = $('#maxplayers'),
         version = $('#version'),
         map = $('#map'),
-        lastcheck = $('#last_check'),
-        updated = $('#updated')
-        settext(lastcheck);
+        lastcheck = $('#last_check')
         setclass(is_online, data.is_online);
 
     if (data.is_online) {
+        settext(name, data.name);
         settext(players, data.players);
         settext(maxplayers, data.maxplayers);
         settext(version, data.version);
@@ -68,6 +68,7 @@ function display(data) {
     }
 
     else {
+        setclass(name, error);
         setclass(players, error);
         setclass(maxplayers, error);
         setclass(version, error);
