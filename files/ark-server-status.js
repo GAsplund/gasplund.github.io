@@ -58,7 +58,6 @@ function DisplayData(data) {
         hostname =   $('#hostname'),
         address =    $('#address'),
         query_port = $('#query_port');
-    //setclass(is_online, data.is_online);
     var table = document.getElementById("statusTable");
     console.log(data.is_online);
     var row = table.insertRow(table.rows.length);
@@ -74,7 +73,7 @@ function DisplayData(data) {
         console.log(data.is_online.replace("1", '<i class="fab fa-asymmetrik"></i>'));
         cell2.innerHTML = data.is_online.replace("1", '<i class="fa fa-check"></i>');
         cell3.innerHTML = data.players + "/" + data.maxplayers;
-        cell4.innerHTML = data.map;
+        cell4.innerHTML = data.map.replace("TheIsland","The Island");
         cell5.innerHTML = data.version;
         cell6.innerHTML = '<a href="steam://connect/' + data.address + ':' + data.query_port + '">Connect</a>';
         cell6.id = "noborder";
