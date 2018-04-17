@@ -59,17 +59,16 @@
 			<h1 style="margin-top:5%"><i class="fas fa-power-off"></i> Server Status:</h1>
 
 			<div class="statusbox">
-				<span class="label">Online:</span><i id="online" class="fas fa-question"></i>
-				<br>
-				<span class="label">Players:</span><i id="players" class="fas fa-question"></i><span>/</span><i id="maxplayers" class="fas fa-question"></i>
-				<br>
-				<span class="label">Version:</span><i id="version" class="fas fa-question"></i>
-				<br>
-				<span class="label">Map:</span><i id="map" class="fas fa-question"></i>
-				<hr style="border: 2px dashed #666666">
-				<span class="label">Refresh:</span><button OnClick="Reload()" title="Click to reload"><i class="fas fa-sync-alt"></i></button>
-				<hr style="border: 2px dashed #666666">
-				<span class="label" title="Last Checked">Check:</span><i id="lastcheck" class="fas fa-question" title="Last checked on"></i>
+				<table id="statusTable" class="table">
+					<tr class="trheader">
+						<th>Name</th>
+						<th>Online</th>
+						<th>Players</th>
+						<th>Map</th>
+						<th>Version</th>
+						<th id="noborder">Join</th>
+					</tr>
+				</table>
 			</div>
 
 		</div>
