@@ -85,7 +85,7 @@ function DisplayData(data) {
         console.log(data.is_online.replace("1", '<i class="fab fa-asymmetrik"></i>'));
         cell2.innerHTML = data.is_online.replace("1", '<i class="fa fa-times"></i>');
         cell3.innerHTML = data.players + "/" + data.maxplayers;
-        cell4.innerHTML = data.map;
+        cell4.innerHTML = data.map.replace("TheIsland","The Island");;
         cell5.innerHTML = data.version;
         cell6.innerHTML = '(Offline)';
         cell6.id = "noborder";
