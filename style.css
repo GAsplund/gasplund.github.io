@@ -31,15 +31,12 @@ html, body {
 	border-right: 2px solid black;
 }
 
-
-/* FORMAT */
 .format {
 	margin: 2% 0% 0% 3%;
-	padding-bottom: 30px;
 }
 
-/* DOWNLOADS STYLE */
-.downloads {
+/* Downloads & Status Checker */
+.downloads, .statusbox {
 	padding: 0.5%;
 	border-radius: 6px;
 	display: inline-block;
@@ -47,39 +44,11 @@ html, body {
 	border: 2px dashed #dcdcdc;
 }
 
-/* IP|PORT STYLE */
-.status-ip {
-	padding: 0.5%;
-	font-size: 20px;
-	border-radius: 6px;
-	display: inline-block;
-	background-color: white;
-	border: 2px dashed #dcdcdc;
-}
-
-/* ONLINE STATUS BOX */
-.statusbox {
-	padding: 0.5%;
-	border-radius: 6px;
-	display: inline-block;
-	background-color: white;
-	border: 2px dashed #dcdcdc;
-}
-
-/* ONLINE STATUS LABEL */
-.label {
-	min-width: 4em;
-	color: #666666;
-	text-align: right;
-	margin-right: 1em;
-	font-weight: bold;
-}
-
-/* SOCIAL MEDIA LINKS */
+/* Social Media Links */
 .socialmedia a {
 	font-size: 64px;
 	text-decoration: none;
-	letter-spacing: 0.3em;
+	margin-right: 1%;
 }
 
 .DownButton {
@@ -88,7 +57,6 @@ html, body {
 	font-weight: bold;
 	padding: 5px 10px;
 	border-radius: 6px;
-	font-family: arial;
 	text-decoration: none;
 	display: inline-block;
 	background-color: #f5f5f5;
@@ -98,7 +66,7 @@ html, body {
 .DownButton:hover {background-color: #ebebeb}
 
 .DownButton:active {
-	top: 1px;
+	top: 5px;
 	position: relative;
 }
 

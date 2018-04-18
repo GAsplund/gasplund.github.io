@@ -5,7 +5,7 @@
 	<head>
 
 		<!-- WEBSITE -->
-		<title>Home</title>
+		<title>Servers</title>
 		<link rel="icon" type="image/png" href="files/favicon.png">
 
 		<!-- META -->
@@ -21,10 +21,13 @@
 		<meta property="og:description" content="GAsplund's Website">
 
 		<!-- STYLES & SCRIPT -->
-		<script src="https://discordapp.com/api/guilds/220923913549381632/widget.json"></script>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="files/ark-server-status.js"></script>
+		<script src="files/ftb-server-status.js"></script>
 		<script src="files/fontawesome-all.min.js"></script>
 		<script src="files/menubar.js"></script>
+		<script>function Reload() {location.reload();}</script>
 
 	</head>
 
@@ -41,17 +44,26 @@
 		<!-- Place code under this comment -->
 
 		<div class="format">
-			<h1><i class="fas fa-home"></i> Welcome!</h1>
-			<h2>
-			This is the place you can go to to check out stuff 
-			<br>
-			I make or get info about my projects or servers.
-			<br>
-			Thanks to xAphex for helping me build this website!
-			</h2>
+			<h1><i class="fab fa-asymmetrik"></i> ARK Server:</h1>
+			<div class="statusbox">
+				<table id="statusTable" class="table">
+					<tr class="trheader">
+						<th>Name</th>
+						<th>Online</th>
+						<th>Players</th>
+						<th>Map</th>
+						<th>Version</th>
+						<th id="noborder">Join</th>
+					</tr>
+				</table>
+			</div>
 
-			<h1 style="padding-top: 3%"><i class="fab fa-discord"></i> Discord Server:</h1>
-			<iframe style="border:none" src="https://discordapp.com/widget?id=220923913549381632&theme=dark" width="300" height="500"></iframe>
+			<h1 style="margin-top:5%"><i class="fas fa-cube"></i> FTB Server:</h1>
+				<div class="statusbox">
+					<!-- table goes here -->
+				</div>
+
+			<h1 style="margin-top:5%">Refresh: <button OnClick="Reload()"><i style="font-size:32px" class="fas fa-sync-alt"></i></button></h1>
 		</div>
 
 	</body>
