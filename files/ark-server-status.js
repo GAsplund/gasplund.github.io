@@ -28,7 +28,6 @@ function DisplayData(data) {
         maxplayers = $('#maxplayers'),
         version =    $('#version'),
         map =        $('#map'),
-        lastcheck =  $('#last_check'),
         hostname =   $('#hostname'),
         address =    $('#address'),
         query_port = $('#query_port');
