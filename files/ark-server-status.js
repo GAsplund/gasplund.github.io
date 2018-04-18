@@ -46,7 +46,7 @@ function DisplayData(data) {
     if (data.is_online === "1") {
         // Add the data with "server online" stuff
         cell1.innerHTML = data.hostname.replace(" - (v" + data.version + ")", "");
-        console.log(data.is_online.replace("1", '<i class="fab fa-asymmetrik"></i>'));
+        console.log(data.is_online.replace("1"));
         cell2.innerHTML = data.is_online.replace("1", '<i class="fas fa-check"></i>');
         cell3.innerHTML = data.players + "/" + data.maxplayers;
         cell4.innerHTML = data.map.replace("TheIsland","The Island");
@@ -58,7 +58,7 @@ function DisplayData(data) {
     else {
         // Add the data with "server offline" stuff
         cell1.innerHTML = data.hostname.replace(" - (v" + data.version + ")", "");
-        console.log(data.is_online.replace("1", '<i class="fab fa-asymmetrik"></i>'));
+        console.log(data.is_online.replace("1"));
         cell2.innerHTML = data.is_online.replace("1", '<i class="fas fa-times"></i>');
         cell3.innerHTML = data.players + "/" + data.maxplayers;
         cell4.innerHTML = data.map.replace("TheIsland","The Island");;
