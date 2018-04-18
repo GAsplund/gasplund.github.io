@@ -1,7 +1,7 @@
-var mainserver = 'https://ark-servers.net/api/?object=servers&element=detail&key=UGkfgK5PNgpdgwGmGHKGcUgflPIjqIOE9M2';
-var secondserver = 'https://ark-servers.net/api/?object=servers&element=detail&key=afmC096pkzTMAL8WDM0HOWpBtpjJTodqs';
+var mainserver = 'https://use.gameapis.net/ark/query/info/gasplund.mc-server.net:7777';
+var secondserver = 'https://use.gameapis.net/ark/query/info/gasplund.mc-server.net:7778';
 
-function ParseAndDisplay(Display, Url) {
+function ParseAndDisplay(Url) {
     $.ajax({
         url: Url,
         type: 'GET',
@@ -10,7 +10,7 @@ function ParseAndDisplay(Display, Url) {
 
         .done(function (data) {
             console.log(data);
-            Display(data);
+            AddDataToTable(data);
         })
 
         .fail(function (data) {
@@ -21,53 +21,53 @@ function ParseAndDisplay(Display, Url) {
         });
 }
 
-function DisplayData(data) {
-    var
-        is_online =  $('#is_online'),
-        players =    $('#players'),
-        maxplayers = $('#maxplayers'),
-        version =    $('#version'),
-        map =        $('#map'),
-        hostname =   $('#hostname'),
-        address =    $('#address'),
-        query_port = $('#query_port');
+function AddDataToTable(data) {
+    var is_online =     data.status + '',
+        players =       data.players.online,
+        maxplayers =    data.players.max,
+        map =           data.map,
+        lastcheck =     data.last_check,
+        hostname =      data.name,
+        name =          data.hostname,
+        query_port =    data.queryPort,
+        steamlink =     data.join,
+        version = (hostname.split(" - (v"))[1].replace(")", ""),
+        isonline;
+    if (is_online) { isonline = 1; }
+    else { isonline = 0; }
 
     var table = document.getElementById("statusTable");
-    console.log(data.is_online);
-    var row = table.insertRow(table.rows.length);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
-    var cell4 = row.insertCell(3);
-    var cell5 = row.insertCell(4);
-    var cell6 = row.insertCell(5);
+        row = table.insertRow(table.rows.length),
+        cell1 = row.insertCell(0),
+        cell2 = row.insertCell(1),
+        cell3 = row.insertCell(2),
+        cell4 = row.insertCell(3),
+        cell5 = row.insertCell(4),
+        cell6 = row.insertCell(5);
 
-    if (data.is_online === "1") {
-        // Add the data with "server online" stuff
-        cell1.innerHTML = data.hostname.replace(" - (v" + data.version + ")", "");
-        console.log(data.is_online.replace("1"));
-        cell2.innerHTML = data.is_online.replace("1", '<i class="fas fa-check"></i>');
-        cell3.innerHTML = data.players + "/" + data.maxplayers;
-        cell4.innerHTML = data.map.replace("TheIsland","The Island");
-        cell5.innerHTML = data.version;
-        cell6.innerHTML = '<a href="steam://connect/' + data.address + ':' + data.query_port + '"><i style="font-size:24px" class="fas fa-sign-in-alt"></i></a>';
+    // Add data that is independent of online/offline
+    cell1.innerHTML = hostname.replace(" - (v" + version + ")", "");
+    cell3.innerHTML = players + "/" + maxplayers;
+    cell4.innerHTML = map.replace("TheIsland", "The Island");
+    cell5.innerHTML = version;
+
+    if (is_online === "true") {
+        // Add the data that is dependent on online/offline for ONLINE STATUS
+        cell2.innerHTML = '<i style="font-size:22px" class="fas fa-check"></i>';
+        cell6.innerHTML = '<a href="' + steamlink + '"><i style="font-size:24px" class="fas fa-sign-in-alt"></i></a>';
         cell6.id = "noborder";
     }
 
     else {
-        // Add the data with "server offline" stuff
-        cell1.innerHTML = data.hostname.replace(" - (v" + data.version + ")", "");
-        console.log(data.is_online.replace("1"));
-        cell2.innerHTML = data.is_online.replace("1", '<i class="fas fa-times"></i>');
-        cell3.innerHTML = data.players + "/" + data.maxplayers;
-        cell4.innerHTML = data.map.replace("TheIsland","The Island");;
-        cell5.innerHTML = data.version;
+        // Add the data that is dependent on online/offline for OFFLINE STATUS
+        cell2.innerHTML = '<i style="font-size:22px" class="fas fa-times"></i>';
         cell6.innerHTML = '(Offline)';
         cell6.id = "noborder";
     }
 }
 
 $(document).ready(function () {
-    ParseAndDisplay(DisplayData, mainserver);
-    ParseAndDisplay(DisplayData, secondserver);
+    // Do the actual thing
+    ParseAndDisplay(mainserver);
+    ParseAndDisplay(secondserver);
 });
