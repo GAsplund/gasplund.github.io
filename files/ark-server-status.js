@@ -22,19 +22,17 @@ function ParseAndDisplay(Url) {
 }
 
 function AddDataToTable(data) {
-    var is_online =     data.status + '',
-        players =       data.players.online,
-        maxplayers =    data.players.max,
-        map =           data.map,
-        lastcheck =     data.last_check,
-        hostname =      data.name,
-        name =          data.hostname,
-        query_port =    data.queryPort,
-        steamlink =     data.join,
-        version = (hostname.split(" - (v"))[1].replace(")", ""),
-        isonline;
-    if (is_online) { isonline = 1; }
-    else { isonline = 0; }
+    var is_online = data.status + '',
+        players = data.players.online,
+        maxplayers = data.players.max,
+        map = data.map,
+        lastcheck = data.last_check,
+        hostname = data.name,
+        name = data.hostname,
+        query_port = data.queryPort,
+        steamlink = data.join,
+        versiontemp = hostname.split(" - (v"),
+        version = versiontemp[versiontemp.length - 1].replace(")", "");
 
     var table = document.getElementById("statusTable");
         row = table.insertRow(table.rows.length),
@@ -67,7 +65,6 @@ function AddDataToTable(data) {
 }
 
 $(document).ready(function () {
-    // Do the actual thing
     ParseAndDisplay(mainserver);
     ParseAndDisplay(secondserver);
 });
