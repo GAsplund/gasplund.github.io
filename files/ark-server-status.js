@@ -51,7 +51,7 @@ function DisplayData(data) {
         cell3.innerHTML = data.players + "/" + data.maxplayers;
         cell4.innerHTML = data.map.replace("TheIsland","The Island");
         cell5.innerHTML = data.version;
-        cell6.innerHTML = '<a href="steam://connect/' + data.address + ':' + data.query_port + '">Connect</a>';
+        cell6.innerHTML = '<a href="steam://connect/' + data.address + ':' + data.query_port + '"><i style="font-size:24px" class="fas fa-sign-in-alt"></i></a>';
         cell6.id = "noborder";
     }
 
