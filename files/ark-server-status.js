@@ -6,13 +6,15 @@ function ParseAndDisplay() {
         console.log("Doing operation " + i + " out of " + servers.length);
         serverslist = serverslist + "," + servers[i];
     }
+
     $.ajax({
         url: "https://use.gameapis.net/ark/query/info/" + serverslist,
         type: 'GET',
         dataType: 'json'
     })
 
-        .done(function (data) /* I guess this is where data comes from*/ {
+        // I guess this is where data comes from
+        .done(function (data) {
             console.log(data);
             for (i = 0; i + 1 <= servers.length; i++) {
                 AddDataToTable(data[servers[i]]);
@@ -57,12 +59,14 @@ function AddDataToTable(data) {
 
     if (is_online === "true") {
         // Add the data that is dependent on online/offline for ONLINE STATUS
-        cell2.innerHTML = '<i style="font-size:22px" class="fas fa-check"></i>';
-        cell6.innerHTML = '<a href="' + steamlink + '"><i style="font-size:24px" class="fas fa-sign-in-alt"></i></a>';
+        cell2.innerHTML = '<i class="fas fa-check fa-lg"></i>';
+        cell6.innerHTML = '<a href="' + steamlink + '"><i class="fas fa-sign-in-alt fa-lg"></i></a>';
         cell6.id = "noborder";
-    } else {
+    }
+
+    else {
         // Add the data that is dependent on online/offline for OFFLINE STATUS
-        cell2.innerHTML = '<i style="font-size:22px" class="fas fa-times"></i>';
+        cell2.innerHTML = '<i class="fas fa-times fa-lg"></i>';
         cell6.innerHTML = '(Offline)';
         cell6.id = "noborder";
     }
