@@ -41,7 +41,7 @@ function AddDataToTable(data) {
         versiontemp = hostname.split(" - (v"),
         version = versiontemp[versiontemp.length - 1].replace(")", "");
 
-    var table = document.getElementById("statusTable");
+    var table = document.getElementById("ARKTable");
     row = table.insertRow(table.rows.length),
         cell1 = row.insertCell(0),
         cell2 = row.insertCell(1),
