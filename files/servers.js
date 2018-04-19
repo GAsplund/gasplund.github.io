@@ -13,51 +13,55 @@ function ParseAndDisplay(game) {
     }
 
 	if (game === "ARK") {
-    $.ajax({
-        url: "https://use.gameapis.net/ark/query/info/" + ARKservers,
-        type: 'GET',
-        dataType: 'json'
+        $.ajax({
+            url: "https://use.gameapis.net/ark/query/info/" + ARKservers,
+            type: 'GET',
+            dataType: 'json'
         })
 
-        // I guess this is where data comes from
-        .done(function (data) {
-            for (i = 0; i + 1 <= ARKservers.length; i++) {
-                AddDataToTable(data[ARKservers[i]], game);
-            }
-        })
+            // I guess this is where data comes from
+            .done(function (data) {
+                for (i = 0; i + 1 <= ARKservers.length; i++) {
+                    AddDataToTable(data[ARKservers[i]], game);
+                }
+            });
 	} else if (game === "FTB")
     {
-        console.log("https://use.gameapis.net/mc/query/info/" + FTBservers[0]);
-		$.ajax({
-        url: "https://use.gameapis.net/mc/query/info/" + FTBservers[0],
-        type: 'GET',
-        dataType: 'json'
+        $.ajax({
+            url: "https://use.gameapis.net/mc/query/info/" + FTBservers[0],
+            type: 'GET',
+            dataType: 'json'
         })
             .done(function (data) {
-                    AddDataToTable(data, game);
-            })
+                AddDataToTable(data, game);
+            });
     }
 
 }
 
 function AddDataToTable(data, game) {
 	if (game === "ARK") {
-		
+
+        var status,
+            players,
+            maxplayers,
+            table;
+
 		//
 		//   ADD THE SERVER DATA FOR ARK: SURVIVAL EVOLVED SERVER(S)
 		//
 		
-    var status = data.status,
-        players = data.players.online,
-        maxplayers = data.players.max,
-        map = data.map,
-        name = data.name,
-        query_port = data.queryPort,
-        steamlink = data.join,
-        versiontemp = name.split(" - (v"),
-        version = versiontemp[versiontemp.length - 1].replace(")", "");
+        status = data.status;
+        players = data.players.online;
+        maxplayers = data.players.max;
+            name = data.name;
+        var query_port = data.queryPort,
+            map = data.map,
+            steamlink = data.join,
+            versiontemp = name.split(" - (v"),
+            version = versiontemp[versiontemp.length - 1].replace(")", "");
 
-    var table = document.getElementById("ARKTable");
+        table = document.getElementById("ARKTable");
     row = table.insertRow(table.rows.length),
         cell1 = row.insertCell(0),
         cell2 = row.insertCell(1),
@@ -90,13 +94,13 @@ function AddDataToTable(data, game) {
 		//
 		//   ADD THE SERVER DATA FOR FEED THE BEAST SERVER
 		//
-    var status = data.status,
-        players = data.players.online,
-        maxplayers = data.players.max,
-        hostname = data.hostname,
-        version = data.version;
+            status = data.status;
+            players = data.players.online;
+            maxplayers = data.players.max;
+        var hostname = data.hostname;
+            version = data.version;
 
-    var table = document.getElementById("FTBTable");
+        table = document.getElementById("FTBTable");
     row = table.insertRow(table.rows.length),
         cell1 = row.insertCell(0),
         cell2 = row.insertCell(1),
