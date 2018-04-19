@@ -33,7 +33,6 @@ function AddDataToTable(data) {
         players = data.players.online,
         maxplayers = data.players.max,
         hostname = data.hostname,
-        port = data.port,
         version = data.version;
 
     var table = document.getElementById("FTBTable");
@@ -41,25 +40,23 @@ function AddDataToTable(data) {
         cell1 = row.insertCell(0),
         cell2 = row.insertCell(1),
         cell3 = row.insertCell(2),
-        cell4 = row.insertCell(3),
-		cell5 = row.insertCell(4),
+        cell4 = row.insertCell(3);
 
     // Add data that is independent of online/offline
     cell1.innerHTML = hostname;
-	cell2.innerHTML = port;
-    cell4.innerHTML = players + "/" + maxplayers;
-    cell5.innerHTML = version;
+    cell3.innerHTML = players + "/" + maxplayers;
+    cell4.innerHTML = version;
 
     if (status === "true") {
         // Add the data that is dependent on online/offline for ONLINE STATUS
-        cell3.innerHTML = '<i class="fas fa-check fa-lg"></i>';
-        cell5.id = "noborder";
+        cell2.innerHTML = '<i class="fas fa-check fa-lg"></i>';
+        cell4.id = "noborder";
     }
 
     else {
         // Add the data that is dependent on online/offline for OFFLINE STATUS
-        cell3.innerHTML = '<i class="fas fa-times fa-lg"></i>';
-        cell5.id = "noborder";
+        cell2.innerHTML = '<i class="fas fa-times fa-lg"></i>';
+        cell4.id = "noborder";
     }
 }
 
