@@ -1,11 +1,6 @@
-var servers = ['gasplund.mc-server.net'];
+var servers = 'gasplund.mc-server.net';
 
-function ParseAndDisplay() {
-    var serverslist = servers[0];
-    for (i = 1; i + 1 <= servers.length; i++) {
-        console.log("Doing operation " + i + " out of " + servers.length);
-        serverslist = serverslist + "," + servers[i];
-    }
+function ParseAndDisplay(servers) {
 
     $.ajax({
         url: "https://use.gameapis.net/mc/query/extensive/" + serverslist,
@@ -16,8 +11,7 @@ function ParseAndDisplay() {
         // I guess this is where data comes from
         .done(function (data) {
             console.log(data);
-            for (i = 0; i + 1 <= servers.length; i++) {
-                AddDataToTable(data[servers[i]]);
+            AddDataToTable(data);
             }
         })
 
