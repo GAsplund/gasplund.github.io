@@ -46,7 +46,7 @@
 		<div class="format">
 			<h1><i class="fab fa-asymmetrik"></i> ARK Server:</h1>
 			<div class="statusbox">
-				<table id="statusTable" class="table">
+				<table id="ARKTable" class="table">
 					<tr class="trheader">
 						<th>Name</th>
 						<th>Online</th>
@@ -59,9 +59,17 @@
 			</div>
 
 			<h1 style="margin-top:5%"><i class="fas fa-cube"></i> FTB Server:</h1>
-				<div class="statusbox">
-					<!-- table goes here -->
-				</div>
+			<div class="statusbox">
+				<table id="FTBTable" class="table">
+					<tr class="trheader">
+						<th>Name</th>
+						<th>Port</th>
+						<th>Online</th>
+						<th>Players</th>
+						<th id="noborder">Version</th>
+					</tr>
+				</table>
+			</div>
 
 			<h1 style="margin-top:5%">Refresh: <button OnClick="Reload()"><i style="font-size:24px" class="fas fa-sync-alt"></i></button></h1>
 		</div>
