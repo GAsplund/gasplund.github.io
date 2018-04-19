@@ -28,7 +28,7 @@ function AddDataToTable(data) {
         name = data.name,
         query_port = data.queryPort,
         steamlink = data.join,
-        versiontemp = hostname.split(" - (v"),
+        versiontemp = name.split(" - (v"),
         version = versiontemp[versiontemp.length - 1].replace(")", "");
 
     var table = document.getElementById("ARKTable");
