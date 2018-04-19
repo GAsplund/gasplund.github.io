@@ -12,8 +12,7 @@ function ParseAndDisplay(server) {
         .done(function (data) {
             console.log(data);
             AddDataToTable(data[server]);
-            }
-        })
+            })
 
         .fail(function (data) {
             console.log("error");
