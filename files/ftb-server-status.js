@@ -1,80 +1,68 @@
-var rq = 'https://mcapi.us/server/status?ip=gasplund.mc-server.net';
+var servers = ['gasplund.mc-server.net'];
 
-var error = 'unknown';
+function ParseAndDisplay() {
+    var serverslist = servers[0];
+    for (i = 1; i + 1 <= servers.length; i++) {
+        console.log("Doing operation " + i + " out of " + servers.length);
+        serverslist = serverslist + "," + servers[i];
+    }
 
-var classes = {
-	error: "fa-question",
-	false: "fa-times",
-	true: "fa-check",
-	success: "fa-check",
-};
+    $.ajax({
+        url: "https://use.gameapis.net/mc/query/extensive/" + serverslist,
+        type: 'GET',
+        dataType: 'json'
+    })
 
-var allclasses = "";
+        // I guess this is where data comes from
+        .done(function (data) {
+            console.log(data);
+            for (i = 0; i + 1 <= servers.length; i++) {
+                AddDataToTable(data[servers[i]]);
+            }
+        })
 
-for(i in classes) {
-	allclasses += ' '+classes[i];
-};
+        .fail(function (data) {
+            console.log("error");
+        })
 
-function q(addr, cb) {
-	$.ajax({
-		url: rq,
-		type: 'GET',
-		dataType: 'json',
-		data: {ip: addr, players: true},
-	})
-
-	.done(function(data) {
-		console.log("success");
-		console.log(data);
-		cb(data);
-	})
-
-	.fail(function(data) {
-		console.log("error");
-	})
-
-	.always(function() {
-	});
+        .always(function () { });
 }
 
-function setclass(o, c) {
-	o.removeClass(allclasses);
-	o.addClass(classes[c]);
-	o.html('');
+function AddDataToTable(data) {
+    var status = data.status,
+        players = data.players.online,
+        maxplayers = data.players.max,
+        hostname = data.hostname,
+        port = data.port,
+        version = data.version;
+
+    var table = document.getElementById("FTBTable");
+    row = table.insertRow(table.rows.length),
+        cell1 = row.insertCell(0),
+        cell2 = row.insertCell(1),
+        cell3 = row.insertCell(2),
+        cell4 = row.insertCell(3),
+		cell5 = row.insertCell(4),
+
+    // Add data that is independent of online/offline
+    cell1.innerHTML = hostname;
+	cell2.innerHTML = port;
+    cell4.innerHTML = players + "/" + maxplayers;
+    cell5.innerHTML = version;
+
+    if (status === "true") {
+        // Add the data that is dependent on online/offline for ONLINE STATUS
+        cell3.innerHTML = '<i class="fas fa-check fa-lg"></i>';
+        cell5.id = "noborder";
+    }
+
+    else {
+        // Add the data that is dependent on online/offline for OFFLINE STATUS
+        cell3.innerHTML = '<i class="fas fa-times fa-lg"></i>';
+        cell5.id = "noborder";
+    }
 }
 
-function settext(o, t) {
-	o.removeClass(allclasses);
-	o.html(t);
-}
-
-function display(data) {
-	var
-		online = $('#online'),
-		playersnow = $('#playersnow'),
-		playersmax = $('#playersmax'),
-		version = $('#version'),
-		status = $('#status'),
-		updated = $('#checked'),
-		d = new Date(data.last_updated*1000);
-		moment.locale('*');
-		settext(updated, moment(d).fromNow());
-		setclass(online, data.online);
-		setclass(status, data.status);
-
-	if (data.online) {
-		settext(playersnow, data.players.now);
-		settext(playersmax, data.players.max);
-		settext(version, data.server.name);
-	}
-
-	else {
-		setclass(playersnow, error);
-		setclass(playersmax, error);
-		setclass(version, error);
-	}
-}
-
-$(document).ready(function() {
-	q('//lentium.xyz', display);
+$(document).ready(function () {
+    ParseAndDisplay(servers);
 });
