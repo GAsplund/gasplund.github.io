@@ -1,6 +1,6 @@
 var server = 'gasplund.mc-server.net';
 
-function ParseAndDisplay(server) {
+function ParseAndDisplay() {
 
     $.ajax({
         url: "https://use.gameapis.net/mc/query/extensive/" + server,
@@ -54,5 +54,5 @@ function AddDataToTable(data) {
 }
 
 $(document).ready(function () {
-    ParseAndDisplay(servers);
+    ParseAndDisplay(server);
 });
