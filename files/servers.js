@@ -97,7 +97,7 @@ function AddDataToTable(data, game) {
             status = data.status;
             players = data.players.online;
             maxplayers = data.players.max;
-        var hostname = data.hostname;
+        var name = data.motds.html;
             version = data.version;
 
         table = document.getElementById("FTBTable");
@@ -108,10 +108,10 @@ function AddDataToTable(data, game) {
         cell4 = row.insertCell(3);
 
     // Add data that is independent of online/offline
-    cell1.innerHTML = hostname;
+    cell1.innerHTML = name;
     cell3.innerHTML = players + "/" + maxplayers;
     cell4.innerHTML = version;
-	cell4.id = "noborder";
+    cell4.id = "noborder";
 
     if (status === true) {
         // Add the data that is dependent on online/offline for ONLINE STATUS
@@ -122,10 +122,10 @@ function AddDataToTable(data, game) {
         // Add the data that is dependent on online/offline for OFFLINE STATUS
         cell2.innerHTML = '<i class="fas fa-times fa-lg"></i>';
     }
-	}
+    }
 }
 
 $(document).ready(function () {
     ParseAndDisplay("ARK");
-	ParseAndDisplay("FTB");
+    ParseAndDisplay("FTB");
 });
