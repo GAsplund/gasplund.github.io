@@ -3,7 +3,6 @@ var servers = ['gasplund.mc-server.net:7777', 'gasplund.mc-server.net:7778'];
 function ParseAndDisplay() {
     var serverslist = servers[0];
     for (i = 1; i + 1 <= servers.length; i++) {
-        console.log("Doing operation " + i + " out of " + servers.length);
         serverslist = serverslist + "," + servers[i];
     }
 
@@ -15,18 +14,10 @@ function ParseAndDisplay() {
 
         // I guess this is where data comes from
         .done(function (data) {
-            console.log(data);
             for (i = 0; i + 1 <= servers.length; i++) {
                 AddDataToTable(data[servers[i]]);
             }
-
         })
-
-        .fail(function (data) {
-            console.log("error");
-        })
-
-        .always(function () { });
 }
 
 function AddDataToTable(data) {
@@ -34,8 +25,7 @@ function AddDataToTable(data) {
         players = data.players.online,
         maxplayers = data.players.max,
         map = data.map,
-        hostname = data.name,
-        name = data.hostname,
+        name = data.name,
         query_port = data.queryPort,
         steamlink = data.join,
         versiontemp = hostname.split(" - (v"),
@@ -51,23 +41,22 @@ function AddDataToTable(data) {
         cell6 = row.insertCell(5);
 
     // Add data that is independent of online/offline
-    cell1.innerHTML = hostname.replace(" - (v" + version + ")", "");
+    cell1.innerHTML = name.replace(" - (v" + version + ")", "");
     cell3.innerHTML = players + "/" + maxplayers;
     cell4.innerHTML = map.replace("TheIsland", "The Island");
     cell5.innerHTML = version;
+	cell6.id = "noborder";
 
     if (status === "true") {
         // Add the data that is dependent on online/offline for ONLINE STATUS
         cell2.innerHTML = '<i class="fas fa-check fa-lg"></i>';
         cell6.innerHTML = '<a href="' + steamlink + '"><i class="fas fa-sign-in-alt fa-lg"></i></a>';
-        cell6.id = "noborder";
     }
 
     else {
         // Add the data that is dependent on online/offline for OFFLINE STATUS
         cell2.innerHTML = '<i class="fas fa-times fa-lg"></i>';
         cell6.innerHTML = '(Offline)';
-        cell6.id = "noborder";
     }
 }
 
