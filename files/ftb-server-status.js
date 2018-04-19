@@ -3,22 +3,15 @@ var server = 'gasplund.mc-server.net';
 function ParseAndDisplay() {
 
     $.ajax({
-        url: "https://use.gameapis.net/mc/query/extensive/" + server,
+        url: "https://use.gameapis.net/mc/query/info/" + server,
         type: 'GET',
         dataType: 'json'
     })
 
-        // I guess this is where data comes from
-        .done(function (data) {
-            console.log(data);
-            AddDataToTable(data[server]);
-            })
-
-        .fail(function (data) {
-            console.log("error");
+    // I guess this is where data comes from
+    .done(function (data) {
+            AddDataToTable(data);
         })
-
-        .always(function () { });
 }
 
 function AddDataToTable(data) {
@@ -39,17 +32,16 @@ function AddDataToTable(data) {
     cell1.innerHTML = hostname;
     cell3.innerHTML = players + "/" + maxplayers;
     cell4.innerHTML = version;
+	cell4.id = "noborder";
 
     if (status === "true") {
         // Add the data that is dependent on online/offline for ONLINE STATUS
         cell2.innerHTML = '<i class="fas fa-check fa-lg"></i>';
-        cell4.id = "noborder";
     }
 
     else {
         // Add the data that is dependent on online/offline for OFFLINE STATUS
         cell2.innerHTML = '<i class="fas fa-times fa-lg"></i>';
-        cell4.id = "noborder";
     }
 }
 
