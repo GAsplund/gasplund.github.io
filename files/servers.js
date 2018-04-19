@@ -12,45 +12,44 @@ function ParseAndDisplay(game) {
         FTBserverslist = FTBserverslist + "," + ARKservers[i];
     }
 
-	if (game === "ARK") {
+    if (game === "ARK") {
         $.ajax({
             url: "https://use.gameapis.net/ark/query/info/" + ARKservers,
             type: 'GET',
             dataType: 'json'
         })
 
-            // I guess this is where data comes from
-            .done(function (data) {
-                for (i = 0; i + 1 <= ARKservers.length; i++) {
-                    AddDataToTable(data[ARKservers[i]], game);
-                }
-            });
-	} else if (game === "FTB")
-    {
+        // I guess this is where data comes from
+        .done(function (data) {
+            for (i = 0; i + 1 <= ARKservers.length; i++) {
+                AddDataToTable(data[ARKservers[i]], game);
+            }
+        });
+    }
+
+	else if (game === "FTB") {
         $.ajax({
             url: "https://use.gameapis.net/mc/query/info/" + FTBservers[0],
             type: 'GET',
             dataType: 'json'
         })
-            .done(function (data) {
-                AddDataToTable(data, game);
-            });
-    }
 
+        .done(function (data) {
+            AddDataToTable(data, game);
+        });
+    }
 }
 
 function AddDataToTable(data, game) {
-	if (game === "ARK") {
+    if (game === "ARK") {
 
         var status,
             players,
             maxplayers,
             table;
 
-		//
-		//   ADD THE SERVER DATA FOR ARK: SURVIVAL EVOLVED SERVER(S)
-		//
-		
+        //   ADD THE SERVER DATA FOR ARK: SURVIVAL EVOLVED SERVER(S)
+
         status = data.status;
         players = data.players.online;
         maxplayers = data.players.max;
@@ -62,7 +61,7 @@ function AddDataToTable(data, game) {
             version = versiontemp[versiontemp.length - 1].replace(")", "");
 
         table = document.getElementById("ARKTable");
-    row = table.insertRow(table.rows.length),
+        row = table.insertRow(table.rows.length),
         cell1 = row.insertCell(0),
         cell2 = row.insertCell(1),
         cell3 = row.insertCell(2),
@@ -88,12 +87,11 @@ function AddDataToTable(data, game) {
         cell2.innerHTML = '<i class="fas fa-times fa-lg"></i>';
         cell6.innerHTML = '(Offline)';
     }
-	} else if (game === "FTB")
-	{
-		
-		//
-		//   ADD THE SERVER DATA FOR FEED THE BEAST SERVER
-		//
+}
+
+    else if (game === "FTB") {
+
+        //   ADD THE SERVER DATA FOR FEED THE BEAST SERVER
             status = data.status;
             players = data.players.online;
             maxplayers = data.players.max;
@@ -101,27 +99,27 @@ function AddDataToTable(data, game) {
             version = data.version;
 
         table = document.getElementById("FTBTable");
-    row = table.insertRow(table.rows.length),
+        row = table.insertRow(table.rows.length),
         cell1 = row.insertCell(0),
         cell2 = row.insertCell(1),
         cell3 = row.insertCell(2),
         cell4 = row.insertCell(3);
 
-    // Add data that is independent of online/offline
-    cell1.innerHTML = name;
-    cell3.innerHTML = players + "/" + maxplayers;
-    cell4.innerHTML = version;
-    cell4.id = "noborder";
+        // Add data that is independent of online/offline
+        cell1.innerHTML = name;
+        cell3.innerHTML = players + "/" + maxplayers;
+        cell4.innerHTML = version;
+        cell4.id = "noborder";
 
-    if (status === true) {
-        // Add the data that is dependent on online/offline for ONLINE STATUS
-        cell2.innerHTML = '<i class="fas fa-check fa-lg"></i>';
-    }
+        if (status === true) {
+            // Add the data that is dependent on online/offline for ONLINE STATUS
+            cell2.innerHTML = '<i class="fas fa-check fa-lg"></i>';
+        }
 
-    else {
-        // Add the data that is dependent on online/offline for OFFLINE STATUS
-        cell2.innerHTML = '<i class="fas fa-times fa-lg"></i>';
-    }
+        else {
+            // Add the data that is dependent on online/offline for OFFLINE STATUS
+            cell2.innerHTML = '<i class="fas fa-times fa-lg"></i>';
+        }
     }
 }
 
