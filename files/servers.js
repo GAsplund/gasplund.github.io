@@ -129,7 +129,23 @@ function AddDataToTable(data, game) {
 
 }
 
+function ReloadTables() {
+	ARKTableRemoveQuery = document.getElementById("ARKTable");
+	FTBTableRemoveQuery = document.getElementById("FTBTable");
+	while (ARKTableRemoveQuery.rows.length > 1) {
+		ARKTableRemoveQuery.deleteRow(ARKTableRemoveQuery.rows.length-1);
+	}
+	while (FTBTable.rows.length > 1) {
+		FTBTableRemoveQuery.deleteRow(FTBTableRemoveQuery.rows.length-1);
+	}
+	InitiateFetch();
+}
+
+function InitiateFetch() {
+	ParseAndDisplay("ARK");
+	ParseAndDisplay("FTB");
+}
+
 $(document).ready(function () {
-    ParseAndDisplay("ARK");
-    ParseAndDisplay("FTB");
+	InitiateFetch();
 });
