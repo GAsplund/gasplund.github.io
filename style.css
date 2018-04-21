@@ -31,6 +31,12 @@ html, body {
 	border-right: 2px solid black;
 }
 
+.refreshbutton {
+	display: block;
+	margin-top: 5%;
+	font-size: 32px;
+}
+
 #refreshtxt {
 	color: black;
 	display: block;
