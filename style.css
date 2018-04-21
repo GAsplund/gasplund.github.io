@@ -10,7 +10,7 @@ html, body {
 	border-spacing: 0;
 }
 
-#noborder {border-right: none}
+.noborder {border-right: none !important}
 
 .table tr {text-align: center}
 
@@ -37,7 +37,7 @@ html, body {
 	font-size: 32px;
 }
 
-#refreshtxt {
+.refreshtxt {
 	color: black;
 	display: block;
 	font-size: initial;
