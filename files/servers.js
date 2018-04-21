@@ -7,7 +7,7 @@ function sleep(ms) {
 }
 
 async function RefreshCountdown() {
-	refreshtxt = document.getElementById("refreshtxt");
+	refreshtxt = document.getElementByClassName("refreshtxt");
 	while (CurrentlyCountingDown === true) {
 		for (i = 1; i <= 30; i++) {
 			refreshtxt.innerHTML = "Auto-refresh in " + (31 - i) + "s";
