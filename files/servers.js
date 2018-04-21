@@ -126,7 +126,7 @@ function AddDataToTable(data, game) {
 		cell4 = row.insertCell(3);
 
 		// Add data that is independent of online/offline
-		cell1.innerHTML = name;
+        cell1.innerHTML = name.replace("\n", "<br>");
 		cell3.innerHTML = players + "/" + maxplayers;
 		cell4.innerHTML = version;
 		cell4.className += "noborder";
