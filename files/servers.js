@@ -1,5 +1,21 @@
+var CurrentlyCountingDown = true;
 var ARKservers = ['gasplund.mc-server.net:7777', 'gasplund.mc-server.net:7778'];
 var FTBservers = ['gasplund.mc-server.net'];
+
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function RefreshCountdown() {
+	refreshtxt = document.getElementById("refreshtxt");
+	while (CurrentlyCountingDown === true) {
+		for (i = 1; i <= 30; i++) {
+			refreshtxt.innerHTML = "Auto-refresh in " + (31 - i) + "s";
+			await sleep(1000);
+		}
+		ReloadTables();
+	}
+}
 
 function ParseAndDisplay(game) {
 
@@ -47,11 +63,11 @@ function AddDataToTable(data, game) {
 	if (game === "ARK") {
 
 		var status,
-		players,
-		maxplayers,
-		table;
+			players,
+			maxplayers,
+			table;
 
-		//	 ADD THE SERVER DATA FOR ARK: SURVIVAL EVOLVED SERVER(S)
+		//   ADD THE SERVER DATA FOR ARK: SURVIVAL EVOLVED SERVER(S)
 
 		status = data.status;
 		players = data.players.online;
@@ -130,20 +146,17 @@ function AddDataToTable(data, game) {
 }
 
 function ReloadTables() {
-
+	CurrentlyCountingDown = false;
 	ARKTableRemoveQuery = document.getElementById("ARKTable");
 	FTBTableRemoveQuery = document.getElementById("FTBTable");
-
 	while (ARKTableRemoveQuery.rows.length > 1) {
 		ARKTableRemoveQuery.deleteRow(ARKTableRemoveQuery.rows.length-1);
 	}
-
 	while (FTBTable.rows.length > 1) {
 		FTBTableRemoveQuery.deleteRow(FTBTableRemoveQuery.rows.length-1);
 	}
-
 	InitiateFetch();
-
+	CurrentlyCountingDown = true;
 }
 
 function InitiateFetch() {
@@ -152,5 +165,7 @@ function InitiateFetch() {
 }
 
 $(document).ready(function () {
+	CurrentlyCountingDown = true;
+	RefreshCountdown();
 	InitiateFetch();
 });
