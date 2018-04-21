@@ -93,7 +93,7 @@ function AddDataToTable(data, game) {
 		cell3.innerHTML = players + "/" + maxplayers;
 		cell4.innerHTML = map.replace("TheIsland", "The Island");
 		cell5.innerHTML = version;
-		cell6.id = "noborder";
+		cell6.className += "noborder";
 
 		if (status === true) {
 			// Add the data that is dependent on online/offline for ONLINE STATUS
@@ -129,7 +129,7 @@ function AddDataToTable(data, game) {
 		cell1.innerHTML = name;
 		cell3.innerHTML = players + "/" + maxplayers;
 		cell4.innerHTML = version;
-		cell4.id = "noborder";
+		cell4.className += "noborder";
 
 		if (status === true) {
 			// Add the data that is dependent on online/offline for ONLINE STATUS
