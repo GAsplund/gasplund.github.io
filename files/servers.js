@@ -10,8 +10,8 @@ async function RefreshCountdown() {
 	refreshtxt = document.getElementsByClassName("refreshtxt")[0];
 	while (CurrentlyCountingDown === true) {
 		for (i = 1; i <= 30; i++) {
-			refreshtxt.innerHTML = "Auto-refresh in " + (31 - i) + "s";
 			await sleep(1000);
+			refreshtxt.innerHTML = "Auto-refresh in " + (31 - i) + "s";
 		}
 		ReloadTables();
 	}
