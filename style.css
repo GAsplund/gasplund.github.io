@@ -32,8 +32,9 @@ html, body {
 }
 
 #refreshtxt {
-    font-size: initial;
-    color: black;
+	color: black;
+	display: block;
+	font-size: initial;
 }
 
 .format {
