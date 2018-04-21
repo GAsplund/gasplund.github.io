@@ -7,12 +7,15 @@ function sleep(ms) {
 }
 
 async function RefreshCountdown() {
+
 	refreshtxt = document.getElementsByClassName("refreshtxt")[0];
 	while (CurrentlyCountingDown === true) {
+
 		for (i = 1; i <= 31; i++) {
 			await sleep(1000);
 			refreshtxt.innerHTML = "Auto-refresh in " + (31 - i) + "s";
 		}
+
 		ReloadTables();
 	}
 }
@@ -126,7 +129,7 @@ function AddDataToTable(data, game) {
 		cell4 = row.insertCell(3);
 
 		// Add data that is independent of online/offline
-        cell1.innerHTML = name.replace("\n", "<br>");
+		cell1.innerHTML = name.replace("\n", "<br>");
 		cell3.innerHTML = players + "/" + maxplayers;
 		cell4.innerHTML = version;
 		cell4.className += "noborder";
