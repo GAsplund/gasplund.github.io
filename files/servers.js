@@ -1,5 +1,5 @@
 var CurrentlyCountingDown = true;
-var ARKservers = ["gasplund.mc-server.net:7777", "gasplund.mc-server.net:7770"];
+var ARKservers = ["gasplund.mc-server.net:7777", "gasplund.mc-server.net:7778", "gasplund.mc-server.net:7779"];
 var FTBservers = ['gasplund.mc-server.net:25565', "gasplund.mc-server.net:25566"];
 
 function sleep(ms) {
