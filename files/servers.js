@@ -136,12 +136,12 @@ function AddDataToTable(indata, game) {
     else if (game === "FTB") {
 
         // ADD THE SERVER DATA FOR FEED THE BEAST SERVER
-        status = status;
+        status = indata.status;
         if (status) {
-            players = players.online;
-            maxplayers = players.max;
-            var name = motds.html;
-            version = version;
+            players = indata.players.online;
+            maxplayers = indata.players.max;
+            var name = indata.motds.html;
+            version = indata.version;
         }
 
         table = document.getElementById("FTBTable");
