@@ -1,0 +1,30 @@
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="files/warframelookup.js"></script>
+			
+			<div class="row">
+			  <div class="column left" style="background-color:#fff;">
+			  
+			<font size="6">Warframe Data Looker Upper</font>
+			</br>
+			
+			<input type="text" id="ItemSearch" onkeyup="searchUpdate()" placeholder="Search for item...">
+			</br>
+			<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()">
+			</select>
+			</br>
+			
+			  </div>
+			  <div class="column right" style="background-color:#fff;">
+			  
+			<div class="statusbox">
+				<table id="FrameTable" class="table">
+					<tr class="trheader">
+						<th>Stat</th>
+						<th class="noborder">Value</th>
+					</tr>
+				</table>
+			</div>
+			
+			  </div>
+			</div>
