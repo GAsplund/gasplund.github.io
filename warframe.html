@@ -6,25 +6,103 @@
 			  <div class="column left" style="background-color:#fff;">
 			  
 			<font size="6">Warframe Data Looker Upper</font>
-			</br>
+			<br>
 			
 			<input type="text" id="ItemSearch" onkeyup="searchUpdate()" placeholder="Search for item...">
-			</br>
+			<br>
 			<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()">
 			</select>
-			</br>
+			<br>
 			
 			  </div>
 			  <div class="column right" style="background-color:#fff;">
 			  
 			<div class="statusbox">
-				<table id="FrameTable" class="table">
-					<tr class="trheader">
-						<th>Stat</th>
-						<th class="noborder">Value</th>
-					</tr>
-				</table>
+                <table id="FrameTable" class="table">
+                    <tr colspan="2" class="trheader">
+                        <th colspan="2" class="noborder">(Image)</th>
+                    </tr>
+                    <tr colspan="2" class="trheader">
+                        <th colspan="2" class="noborder">(Name)</th>
+                    </tr>
+                </table>
 			</div>
 			
 			  </div>
 			</div>
+			
+			
+			<style>
+                .trheader {
+                    border-bottom: 2px solid black;
+                    background-color: #d9d9d9;
+                    left: 0px;
+                    column-span: all;
+                    column-count: 1;
+                }
+
+.table td {
+	font-size: 16px;
+	padding: 7px 10px;
+	border-right: 2px solid black;
+	left: 0px;
+}
+
+.table th {
+	font-size: 20px;
+	padding: 10px 10px;
+	border-right: 2px solid black;
+	left: 0px;
+}
+			html, body {
+	margin: 0;
+	padding: 0;
+	font-family: "Trebuchet MS";
+}
+			.ItemSelection{
+ width:350px;
+ line-height: 5px;
+ margin-left: 10px;
+ overflow-y: auto;
+}
+.ItemSelection option{
+   padding-top: 8px;
+   padding-bottom: 8px;
+   margin: auto;
+   font-family: "Trebuchet MS";
+   font-size: 15px;
+}
+
+.column {
+    float: left;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+}
+
+.left {
+  width: 25%;
+}
+
+.right {
+  width: 75%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+#ItemSearch {
+	margin-top: 10px;
+	margin-bottom: -1px;
+	margin-left: 10px;
+	font-size: 30px;
+	font-family: "Trebuchet MS";
+	width:350px;
+}
+</style>
