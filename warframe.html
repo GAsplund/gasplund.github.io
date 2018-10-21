@@ -2,8 +2,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="files/warframelookup.js"></script>
 			
-			<div class="row">
-			  <div class="column left" style="background-color:#fff;">
+
 			  
 			<font size="6">Warframe Data Looker Upper</font>
 			<br>
@@ -13,33 +12,29 @@
 			<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()">
 			</select>
 			<br>
-			
-			  </div>
-			  <div class="column right" style="background-color:#fff;">
+			<select id="CategorySelect" class="ItemSelection" onchange="queryCategorySelection()">
+			</select>
+			<br>
 			  
-			<div class="statusbox">
-                <table id="FrameTable" class="table">
+			<div align="right" class="statusbox">
+                <table align="right" id="FrameTable" class="table">
                     <tr colspan="2" class="trheader">
-                        <th colspan="2" class="noborder">(Image)</th>
+                        <th colspan="2" class="noborder"></th>
                     </tr>
                     <tr colspan="2" class="trheader">
-                        <th colspan="2" class="noborder">(Name)</th>
+                        <th colspan="2" class="noborder"></th>
                     </tr>
                 </table>
 			</div>
 			
-			  </div>
-			</div>
-			
-			
-			<style>
-                .trheader {
-                    border-bottom: 2px solid black;
-                    background-color: #d9d9d9;
-                    left: 0px;
-                    column-span: all;
-                    column-count: 1;
-                }
+<style>
+.trheader {
+    border-bottom: 2px solid black;
+    background-color: #d9d9d9;
+    left: 0px;
+    column-span: all;
+    column-count: 1;
+}
 
 .table td {
 	font-size: 16px;
@@ -73,10 +68,9 @@
    font-size: 15px;
 }
 
-.column {
+/*.column {
     float: left;
     padding: 10px;
-    height: 300px; /* Should be removed. Only for demonstration */
 }
 
 .left {
@@ -91,7 +85,7 @@
     content: "";
     display: table;
     clear: both;
-}
+}*/
 
 * {
     box-sizing: border-box;
@@ -105,4 +99,11 @@
 	font-family: "Trebuchet MS";
 	width:350px;
 }
+
+.statusbox{
+	position:absolute;
+	right:0%;
+	top:0%;
+}
+
 </style>
