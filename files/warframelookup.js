@@ -1,21 +1,72 @@
 var ItemData = {
-    "Warframes" : [],
-    "Primaries": [],
-    "Secondaries": [],
-    "Melees":[],
-    "Sentiels":[],
-    "Sentiel Weapons":[],
-    "Companions":[],
-    "Archwings":[],
-    "Arch-Melees":[],
-    "Resources":[],
-    "Relics":[]
+    "Warframes" : {},
+    "Primary": {},
+    "Secondary": {},
+    "Melee":{},
+    "Sentiels":{},
+    "Sentiel Weapons":{},
+    "Companions":{},
+    "Archwings":{},
+    "Arch-Melees":{},
+    "Resources":{},
+    "Relics":{},
+    "Misc":{}
 }
+
+//var ItemTypes = $.getJSON("files/warframeDataDefine.json")
+
+var ItemTypes = {
+"Blade and Whip"    :"Melee",
+"Bow"               :"Primary",
+"Claws"             :"Melee",
+"Crossbow"          :"Primary",
+"Dagger"            :"Melee",
+"Dual Daggers"      :"Melee",
+"Dual Pistols"      :"Secondary",
+"Dual Shotguns"     :"Secondary",
+"Dual Swords"       :"Melee",
+"Fist"              :"Melee",
+"Glaive"            :"Melee",
+"Gunblade"          :"Melee",
+"Hammer"            :"Melee",
+"Heavy Blade"       :"Melee",
+"Launcher"          :"Primary",
+"Machete"           :"Melee",
+"Melee"             :"Melee",
+"Misc"              :"Misc",
+"Nikana"            :"Melee",
+"Nunchaku"          :"Melee",
+"Pistol"            :"Secondary",
+"Polearm"           :"Melee",
+"Rapier"            :"Melee",
+"Rifle"             :"Primary",
+"Scythe"            :"Melee",
+"Shotgun"           :"Primary",
+"Shotgun Sidearm"   :"Secondary",
+"Sniper Rifle"      :"Primary",
+"Sparring"          :"Melee",
+"Speargun"          :"Primary",
+"Staff"             :"Melee",
+"Sword"             :"Melee",
+"Sword and Shield"  :"Melee",
+"Thrown"            :"Secondary",
+"Tonfa"             :"Melee",
+"Warfan"            :"Melee",
+"Whip"              :"Melee",
+"Warframe"          :"Warframe"
+}
+
+var Weapons;
+var searchResult = {};
 
 var ExportManifest;
 
-var FrameVariablesToAdd = ["masteryReq", "health", "shield", "armor", "power", "sprint", "polarities", "aura"]
-var PrimaryVariablesToAdd = ["masteryReq"]
+var ItemFormat = {
+    "Warframe":["masteryReq", "health", "shield", "armor", "power", "sprint", "polarities", "aura"],
+    "Primary":["masteryReq","type","noise","fireRate","accuracy","magazineSize","ammo","reloadTime","disposition"],
+    "Secondary":["masteryReq","type","trigger","noise","fireRate","accuracy","magazineSize","ammo","reloadTime","disposition"],
+    "Melee":["masteryReq","type","fireRate","channeling","disposition"]
+}
 
 // API text to real text
 var stats = {
@@ -39,7 +90,16 @@ var stats = {
 	"shield"			:"Shield",
 	"skipBuildTimePrice":"Rush Cost",
 	"sprint"			:"Sprint Speed",
-	"type"				:"Type"
+    "type"				:"Type",
+    "noise"             :"Noise",
+    "fireRate"          :"Fire Rate",
+    "accuracy"          :"Accuracy",
+    "magazineSize"      :"Magazine Size",
+    "ammo"              :"Max Ammo",
+    "reloadTime"        :"Reload Time",
+    "disposition"       :"Disposition",
+    "trigger"           :"Trigger Type",
+    "channeling"        :"Channeling Damage"
 }
 
 // An image link for each polarity
@@ -59,28 +119,61 @@ String.prototype.replaceAll = function (search, replacement) {
     return target.split(search).join(replacement);
 };
 
-// Makes things easier
-function GetInfoForWarframe(FrameNumber) {
-    return (ItemData.Warframes[FrameNumber]);
+function dynamicSort(prop) {
+    var keysSorted = [];
+    var sortableObj = {};
+
+    Object.keys(prop).forEach(function(key){
+        keysSorted.push(prop[parseInt(key)]);
+    });
+
+    keysSorted.sort();
+
+    for(item in keysSorted){
+        console.log(item);
+        sortableObj[Object.keys(sortableObj)["length"]] = keysSorted[item];
+    }
+    return sortableObj;
 }
 
+// Makes things easier
+function GetInfoForItem(GetInfoQuery) {
+    for (entry in ItemData){
+        var QueryResult = Object.values(ItemData[entry]).find(obj => {
+            return obj["name"] === GetInfoQuery;
+        })
+        if (QueryResult != undefined) {if (QueryResult["name"] === GetInfoQuery) return QueryResult; break;}
+    }
+    return QueryResult;
+    //return (ItemData.Warframes[FrameNumber]);
+}
+
+function CategorizeWeapons(WeaponsList){
+
+
+    Object.keys(WeaponsList).forEach(function(key) {
+
+        var PushCat = ItemTypes[WeaponsList[key]["type"]];
+        ItemData[PushCat][Object.keys(ItemData[PushCat])["length"]] = WeaponsList[key];
+      
+      });
+}
 
 // Real juicy stuff. Adds info for warframes and soon weapons
-function AddInfoToTable(FrameParsedData, VariablesToAdd, TargetTable) {
+function AddInfoToTable(ParsedData, TargetTable) {
     clearAllTables();
-    if (FrameParsedData.type)
-    var frameImage = Object.values(ExportManifest["Manifest"]).find(obj => {
-        return obj["uniqueName"] === FrameParsedData.uniqueName;
-    })
+    VariablesToAdd = ItemFormat[ItemTypes[ParsedData["type"]]];
+    if (ParsedData.type)
+    var frameImage = "https://raw.githubusercontent.com/WFCD/warframe-items/development/data/img/" + ParsedData.imageName;
     TargetTable.rows[0].getElementsByTagName("th")[0].innerHTML = "Loading...";
     var img = new Image();
     img.onload = function () {
         TargetTable.rows[0].getElementsByTagName("th")[0].innerHTML = "<img id=\"itemImage\" src=\"" + img.src + "\"<\\img>";
-        document.getElementById("itemImage").height = document.getElementById("itemImage").height * (171 / 256);
-        document.getElementById("itemImage").width = document.getElementById("itemImage").width / (171 / 256);
+        //document.getElementById("itemImage").height = document.getElementById("itemImage").height * (171 / 256);
+        //document.getElementById("itemImage").width = document.getElementById("itemImage").width / (171 / 256);
     }
-    img.src = "http://content.warframe.com/MobileExport" + frameImage.textureLocation;
-    TargetTable.rows[1].getElementsByTagName("th")[0].innerHTML = FrameParsedData.name;
+    img.src = frameImage;
+    TargetTable.rows[1].getElementsByTagName("th")[0].innerHTML = ParsedData.name;
 
     for (var i = 0; i < VariablesToAdd.length; i++) {
         row = TargetTable.insertRow(TargetTable.rows.length),
@@ -92,24 +185,25 @@ function AddInfoToTable(FrameParsedData, VariablesToAdd, TargetTable) {
         statName = VariablesToAdd[i].replace(VariablesToAdd[i], stats[VariablesToAdd[i]]);
         cell1.innerHTML = statName;
         if (VariablesToAdd[i] === "polarities" || VariablesToAdd[i] === "aura") {
-            var _framePolarities = String(FrameParsedData[VariablesToAdd[i]]);
+            var _framePolarities = String(ParsedData[VariablesToAdd[i]]);
 
-            if (FrameParsedData[VariablesToAdd[i]] != undefined) {
-                if (FrameParsedData[VariablesToAdd[i]].constructor === Array) {
-                    for (var l = 0; l < FrameParsedData[VariablesToAdd[i]].length; l++) {
-                        var _framePolarities = _framePolarities.replace(FrameParsedData[VariablesToAdd[i]][l], polaritiesToImage[FrameParsedData[VariablesToAdd[i]][l]]);
+            if (ParsedData[VariablesToAdd[i]] != undefined) {
+                if (ParsedData[VariablesToAdd[i]].constructor === Array) {
+                    for (var l = 0; l < ParsedData[VariablesToAdd[i]].length; l++) {
+                        var _framePolarities = _framePolarities.toLowerCase().replace(ParsedData[VariablesToAdd[i]][l], polaritiesToImage[ParsedData[VariablesToAdd[i]][l]]);
                     }
                 } else {
-                    var _framePolarities = _framePolarities.replace(FrameParsedData[VariablesToAdd[i]], polaritiesToImage[FrameParsedData[VariablesToAdd[i]]]);
+                    var _framePolarities = _framePolarities.toLowerCase().replace(ParsedData[VariablesToAdd[i]], polaritiesToImage[ParsedData[VariablesToAdd[i]]]);
                 }
             } else {
+                // There are no polarities for the item, set the value as N/A
                 var _framePolarities = "N/A";
             }
 
 
             var _frameInfo = _framePolarities.replaceAll(",", "");
         } else {
-            var _frameInfo = String(FrameParsedData[VariablesToAdd[i]]).replaceAll(",", "");
+            var _frameInfo = String(ParsedData[VariablesToAdd[i]]).replaceAll(",", "");
         }
         cell2.innerHTML = _frameInfo;
         cell2.style.TextAlign = "left";
@@ -125,58 +219,71 @@ function clearAllTables() {
 }
 
 function searchUpdate() {
-    var searchQuery = document.getElementById("ItemSearch").value;
+        searchQuery = "";
+        searchQuery = document.getElementById("ItemSearch").value;
 
-    searchResult = Object.keys(ItemData.Warframes).filter(function (key) {
-        return ItemData.Warframes[key]["name"].toLowerCase().includes(searchQuery.toLowerCase());
-    });
+        searchResult = {};
+
+    for (typeKey in ItemData){
+        var searchResultNumbers = Object.keys(ItemData[typeKey]).filter(function (key) {
+            return ItemData[typeKey][key]["name"].toLowerCase().includes(searchQuery.toLowerCase());
+        });
+        Object.keys(searchResultNumbers).forEach(function(srn){
+            searchResult[parseInt(srn)+parseInt(Object.keys(searchResult)["length"])] = ItemData[typeKey][searchResultNumbers[srn]]["name"];
+        })
+    }
+
+    searchResult = dynamicSort(searchResult);
 
     document.getElementById("ItemSelect").innerHTML = "";
 
     var select = document.getElementById("ItemSelect");
     for (index in searchResult) {
         //select.options[select.options.length] = new Option(searchResult[index], index); // OLD
-        select.options[select.options.length] = new Option(ItemData.Warframes[searchResult[index]]["name"], index);
+        select.options[select.options.length] = new Option(/*ItemData.Warframes[searchResult[index]]["name"]*/searchResult[index], index);
     }
 }
 
 function querySelection() {
-    AddInfoToTable(GetInfoForWarframe(searchResult[document.getElementById("ItemSelect").value]), FrameVariablesToAdd, document.getElementById("FrameTable"));
+    AddInfoToTable(GetInfoForItem(searchResult[document.getElementById("ItemSelect").value]), document.getElementById("FrameTable"));
 }
 
 // Get and store information from API
 function InitiateFetch() {
 
-    $.ajax({
+    $.when(FrameAjax(), WeaponAjax()).done(function(a1, a2){
+        ItemData.Warframes = JSON.parse(a1[2]["responseText"]);
+        //ExportManifest = JSON.parse(a2[2]["responseText"]);
+        CategorizeWeapons(JSON.parse(a2[2]["responseText"]));
+        searchUpdate()
+    });
+    function FrameAjax(){
+    return $.ajax({
         url: "https://api.warframestat.us/warframes",
         type: 'GET',
         dataType: 'json'
     })
+    }
 
-        .done(function (data) {
-            ItemData.Warframes = data;
-            searchUpdate()
-        });
-
-
-    $.ajax({
-        url: "https://cors-anywhere.herokuapp.com/" + "http://content.warframe.com/MobileExport/Manifest/ExportManifest.json",
+    function ManifAjax(){
+    return $.ajax({
+        url: "https://crossorigin.me/" + "http://content.warframe.com/MobileExport/Manifest/ExportManifest.json",
+        //url: "http://content.warframe.com/MobileExport/Manifest/ExportManifest.json",
         type: 'GET',
+        headers: {
+            'Access-Control-Allow-Origin': '*'
+        },
         dataType: 'json'
     })
+    }
 
-        .done(function (data) {
-            ExportManifest = data;
-        });
-
-    $.ajax({
+    function WeaponAjax(){
+    return $.ajax({
         url: "https://api.warframestat.us/weapons",
         type: 'GET',
         dataType: 'json'
     })
-        .done(function (data) {
-            var Weapons = data;
-        });
+    }
 }
 
 // Sleep Function
