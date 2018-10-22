@@ -113,6 +113,21 @@ var polaritiesToImage = {
 	"umbra":"<img src=\"https://cdn.discordapp.com/attachments/389344871925809163/494951890119819265/20.png\"</img>"
 }
 
+var categoryConvert = {
+    "Warframes":"Warframes",
+    "Primary":"Primary",
+    "Secondary":"Secondary",
+    "Melee":"Melee",
+    "Sentiel":"Sentiel",
+    "Sentiel Weapons":"Sentiel Weapon",
+    "Companions":"Companion",
+    "Archwings":"Archwing",
+    "Arch-Melees":"Arch-Melee",
+    "Resources":"Resource",
+    "Relics":"Relic",
+    "Misc":"Misc"
+}
+
 // Why doesn't the normal replace function have this?
 String.prototype.replaceAll = function (search, replacement) {
     var target = this;
@@ -130,7 +145,6 @@ function dynamicSort(prop) {
     keysSorted.sort();
 
     for(item in keysSorted){
-        console.log(item);
         sortableObj[Object.keys(sortableObj)["length"]] = keysSorted[item];
     }
     return sortableObj;
@@ -150,10 +164,12 @@ function GetInfoForItem(GetInfoQuery) {
 
 function CategorizeWeapons(WeaponsList){
 
-
     Object.keys(WeaponsList).forEach(function(key) {
 
-        var PushCat = ItemTypes[WeaponsList[key]["type"]];
+        // Select what category the item should be put in
+        //var PushCat = ItemTypes[WeaponsList[key]["type"]];
+        var PushCat = WeaponsList[key]["category"];
+
         ItemData[PushCat][Object.keys(ItemData[PushCat])["length"]] = WeaponsList[key];
       
       });
@@ -224,13 +240,19 @@ function searchUpdate() {
 
         searchResult = {};
 
+        var categorySelect = document.getElementById("CategorySelect").value;
+
     for (typeKey in ItemData){
         var searchResultNumbers = Object.keys(ItemData[typeKey]).filter(function (key) {
-            return ItemData[typeKey][key]["name"].toLowerCase().includes(searchQuery.toLowerCase());
+            return ItemData[typeKey][key]["name"].toLowerCase().includes(searchQuery.toLowerCase()) && (ItemData[typeKey][key]["category"] == categoryConvert[categorySelect] || categorySelect == "All");
         });
         Object.keys(searchResultNumbers).forEach(function(srn){
             searchResult[parseInt(srn)+parseInt(Object.keys(searchResult)["length"])] = ItemData[typeKey][searchResultNumbers[srn]]["name"];
         })
+    }
+
+    if (Object.keys(searchResult)[length] == "0"){
+        console.log("No matches when comparing item category ", categorySelect);
     }
 
     searchResult = dynamicSort(searchResult);
@@ -246,6 +268,10 @@ function searchUpdate() {
 
 function querySelection() {
     AddInfoToTable(GetInfoForItem(searchResult[document.getElementById("ItemSelect").value]), document.getElementById("FrameTable"));
+}
+
+function queryCategorySelection() {
+    searchUpdate();
 }
 
 // Get and store information from API
