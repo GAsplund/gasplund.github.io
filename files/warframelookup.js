@@ -15,7 +15,7 @@ var ItemData = {
 
 //var ItemTypes = $.getJSON("files/warframeDataDefine.json")
 
-var ItemTypes = {
+/*var ItemTypes = {
 "Blade and Whip"    :"Melee",
 "Bow"               :"Primary",
 "Claws"             :"Melee",
@@ -54,7 +54,7 @@ var ItemTypes = {
 "Warfan"            :"Melee",
 "Whip"              :"Melee",
 "Warframe"          :"Warframe"
-}
+}*/
 
 var Weapons;
 var searchResult = {};
@@ -62,7 +62,7 @@ var searchResult = {};
 var ExportManifest;
 
 var ItemFormat = {
-    "Warframe":["masteryReq", "health", "shield", "armor", "power", "sprint", "polarities", "aura"],
+    "Warframes":["masteryReq", "health", "shield", "armor", "power", "sprint", "polarities", "aura"],
     "Primary":["masteryReq","type","noise","fireRate","accuracy","magazineSize","ammo","reloadTime","disposition"],
     "Secondary":["masteryReq","type","trigger","noise","fireRate","accuracy","magazineSize","ammo","reloadTime","disposition"],
     "Melee":["masteryReq","type","fireRate","channeling","disposition"]
@@ -178,7 +178,7 @@ function CategorizeWeapons(WeaponsList){
 // Real juicy stuff. Adds info for warframes and soon weapons
 function AddInfoToTable(ParsedData, TargetTable) {
     clearAllTables();
-    VariablesToAdd = ItemFormat[ItemTypes[ParsedData["type"]]];
+    VariablesToAdd = ItemFormat[ParsedData["category"]];
     if (ParsedData.type)
     var frameImage = "https://raw.githubusercontent.com/WFCD/warframe-items/development/data/img/" + ParsedData.imageName;
     TargetTable.rows[0].getElementsByTagName("th")[0].innerHTML = "Loading...";
