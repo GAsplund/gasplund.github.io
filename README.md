@@ -1,3 +1,3 @@
 ﻿# [GAsplund's Website](https://gasplund.github.io)
 
-Copyright © 2018 GAsplund. All Rights Reserved.
+Copyright © 2019 GAsplund. All Rights Reserved.
