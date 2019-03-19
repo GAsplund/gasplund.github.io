@@ -1,6 +1,6 @@
 var CurrentlyCountingDown = true;
-var ARKservers = ["gasplund.mc-server.net:7777", "gasplund.mc-server.net:7778", "gasplund.mc-server.net:7779"];
-var FTBservers = ["gasplund.mc-server.net:25565", "gasplund.mc-server.net:25566"];
+var ARKservers = ["85.195.17.54:7777", "85.195.17.54:7778", "85.195.17.54:7779"];
+var FTBservers = ["85.195.17.54:25565", "85.195.17.54:25566"];
 
 function sleep(ms) {
 	return new Promise(resolve => setTimeout(resolve, ms));
