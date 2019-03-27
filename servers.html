@@ -1,36 +1,19 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html>
 
 	<head>
-
-		<!-- WEBSITE -->
 		<title>Servers</title>
-		<link rel="icon" type="image/png" href="files/favicon.png">
-
-		<!-- META -->
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-
-		<!-- OPEN GRAPH PROTOCOL -->
-		<meta property="og:site_name" content="GAsplund's Website">
-		<meta property="og:title" content="GAsplund's Website">
-		<meta property="og:type" content="website">
-		<meta property="og:url" content="https://gasplund.github.io">
-		<meta property="og:image" content="files/favicon.png">
-		<meta property="og:description" content="GAsplund's Website">
-
-		<!-- STYLES & SCRIPT -->
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="icon" type="image/png" href="files/favicon.png">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="files/menubar.js"></script>
+		<script src="files/all.js"></script>
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="files/servers.js"></script>
-		<script src="files/all.js"></script>
-		<script src="files/menubar.js"></script>
-
 	</head>
 
 	<body>
-
 		<div id="logo"><h1>GAsplund</h1></div>
 		<span class="menu-button" onclick="openNav()"><i class="fas fa-bars"></i></span>
 		<ul id="menubar" class="topnav sidenav">
@@ -39,8 +22,6 @@
 			<li><a href="downloads"><i class="fas fa-download"></i> Downloads</a></li>
 			<li><a href="servers"><i class="fas fa-server"></i> Servers</a></li>
 		</ul>
-		<!-- Place code under this comment -->
-
 		<div class="format">
 			<h1><i class="fab fa-asymmetrik"></i> ARK Server:</h1>
 			<div class="statusbox">
@@ -55,7 +36,6 @@
 					</tr>
 				</table>
 			</div>
-
 			<h1 style="margin-top:5%"><i class="fas fa-cube"></i> FTB Server:</h1>
 			<div class="statusbox">
 				<table id="FTBTable" class="table">
@@ -67,12 +47,10 @@
 					</tr>
 				</table>
 			</div>
-
 			<span class="refreshbutton">
 			    <a class="DownButton" OnClick="ReloadTables()">Refresh<br><span class="refreshtxt">Auto-refresh in 30s</span></a>
 			</span>
 		</div>
-
 	</body>
 
 </html>
