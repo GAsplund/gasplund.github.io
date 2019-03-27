@@ -10,38 +10,6 @@
 		<script src="files/menubar.js"></script>
 		<script src="files/all.js"></script>
 		<script src="files/warframelookup.js"></script>
-		<style>
-			.trheader {
-				column-span: all;
-				column-count: 1;
-			}
-			.ItemSelection {
-				width: 350px;
-				line-height: 5px;
-				margin-left: 0px;
-				overflow-y: auto;
-			}
-			.ItemSelection option {
-				padding-top: 8px;
-				padding-bottom: 8px;
-				margin: auto;
-				font-size: 15px;
-			}
-			{box-sizing: border-box}
-			#ItemSearch {
-				margin-top: 0px;
-				margin-bottom: -1px;
-				margin-left: 0px;
-				font-size: 30px;
-				width: 350px;
-			}
-			.statusbox {
-				margin-right: 0%;
-				float: right;
-				right: 0%;
-				margin-top: 20px;
-			}
-		</style>
 	</head>
 
 	<body>
@@ -56,9 +24,8 @@
 		</ul>
 		<div class="format">
 			<input type="text" id="ItemSearch" onkeyup="searchUpdate()" placeholder="Search for item..." style="width:100%;position:absolute;right:0%;top:0%">
-			<font size="6" style="right:0px;position:absolute">Warframe Data Looker Upper</font>
 			<br>
-			<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()" style="height:calc(100% - 42px);left:0%;margin-top:21px"></select>
+			<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()"></select>
 			<div align="right" class="statusbox">
 				<table align="right" id="FrameTable" class="table">
 					<tr colspan="2" class="trheader">
