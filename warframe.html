@@ -45,35 +45,46 @@
 	</head>
 
 	<body>
-		<input type="text" id="ItemSearch" onkeyup="searchUpdate()" placeholder="Search for item..." style="width:100%;position:absolute;right:0%;top:0%">
-		<font size="6" style="right:0px;position:absolute">Warframe Data Looker Upper</font>
-		<br>
-		<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()" style="height:calc(100% - 42px);left:0%;margin-top:21px"></select>
-		<div align="right" class="statusbox">
-			<table align="right" id="FrameTable" class="table">
-				<tr colspan="2" class="trheader">
-					<th colspan="2" class="noborder"></th>
-				</tr>
-				<tr colspan="2" class="trheader">
-					<th colspan="2" class="noborder"></th>
-				</tr>
-			</table>
+		<div id="logo"><h1>GAsplund</h1></div>
+		<span class="menu-button" onclick="openNav()"><i class="fas fa-bars"></i></span>
+		<ul id="menubar" class="topnav sidenav">
+			<li><a href="/"><i class="fas fa-home"></i> Home</a></li>
+			<li><a href="aboutme"><i class="fas fa-user"></i> About Me</a></li>
+			<li><a href="downloads"><i class="fas fa-download"></i> Downloads</a></li>
+			<li><a href="servers"><i class="fas fa-server"></i> Servers</a></li>
+			<li><a href="warframe">Warframe</a></li>
+		</ul>
+		<div class="format">
+			<input type="text" id="ItemSearch" onkeyup="searchUpdate()" placeholder="Search for item..." style="width:100%;position:absolute;right:0%;top:0%">
+			<font size="6" style="right:0px;position:absolute">Warframe Data Looker Upper</font>
+			<br>
+			<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()" style="height:calc(100% - 42px);left:0%;margin-top:21px"></select>
+			<div align="right" class="statusbox">
+				<table align="right" id="FrameTable" class="table">
+					<tr colspan="2" class="trheader">
+						<th colspan="2" class="noborder"></th>
+					</tr>
+					<tr colspan="2" class="trheader">
+						<th colspan="2" class="noborder"></th>
+					</tr>
+				</table>
+			</div>
+			<select id="CategorySelect" class="ItemSelection" onchange="queryCategorySelection()">
+				<option>All</option>
+				<option>Warframes</option>
+				<option>Primary</option>
+				<option>Secondary</option>
+				<option>Melee</option>
+				<option>Sentiel</option>
+				<option>Sentiel Weapons</option>
+				<option>Companions</option>
+				<option>Archwings</option>
+				<option>Arch-Melees</option>
+				<option>Resources</option>
+				<option>Relics</option>
+				<option>Misc</option>
+			</select>
 		</div>
-		<select id="CategorySelect" class="ItemSelection" onchange="queryCategorySelection()">
-			<option>All</option>
-			<option>Warframes</option>
-			<option>Primary</option>
-			<option>Secondary</option>
-			<option>Melee</option>
-			<option>Sentiel</option>
-			<option>Sentiel Weapons</option>
-			<option>Companions</option>
-			<option>Archwings</option>
-			<option>Arch-Melees</option>
-			<option>Resources</option>
-			<option>Relics</option>
-			<option>Misc</option>
-		</select>
 	</body>
 
 </html>
