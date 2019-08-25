@@ -8,20 +8,9 @@
 <font size="6" style="right:0px;position:absolute">Warframe Data Looker Upper</font>
 
 <br>
-<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()" style="height:calc(100% - 42px);left:0%;margin-top:21px"></select>
-<div align="right" class="statusbox">
-    <table align="right" id="FrameTable" class="table">
-        <tr colspan="2" class="trheader">
-            <th colspan="2" class="noborder"></th>
-        </tr>
-        <tr colspan="2" class="trheader">
-            <th colspan="2" class="noborder"></th>
-        </tr>
-    </table>
-</div>
-
-
-<select id="CategorySelect" class="ItemSelection" onchange="queryCategorySelection()">
+<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()" style="height:calc(100% - 82px);left:0%;margin-top:21px"></select>
+<br>
+<select id="CategorySelect" class="ItemSelection" onchange="queryCategorySelection()" style="height:42px;font-size:21px;font-family:Trebuchet MS">
     <option>All</option>
     <option>Warframes</option>
     <option>Primary</option>
@@ -36,6 +25,18 @@
     <option>Relics</option>
     <option>Misc</option>
 </select>
+
+<div align="right" class="statusbox" id="right">
+    <table align="right" id="FrameTable" class="table">
+        <tr colspan="2" class="trheader">
+            <th colspan="2" width="532px" height="363px" class="noborder"></th>
+        </tr>
+        <tr colspan="2" class="trheader">
+            <th colspan="2" class="noborder">Nothing is selected</th>
+        </tr>
+    </table>
+</div>
+
 <br>
 
 
@@ -75,14 +76,13 @@
         overflow-y: auto;
     }
 
-        .ItemSelection option {
-            padding-top: 8px;
-            padding-bottom: 8px;
-            margin: auto;
-            font-family: "Trebuchet MS";
-            font-size: 15px;
-        }
-
+    .ItemSelection option {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin: auto;
+        font-family: "Trebuchet MS";
+        font-size: 15px;
+    }
     /*.column {
         float: left;
         padding: 10px;
@@ -122,4 +122,37 @@
         right: 0%;
         margin-top: 20px;
     }
+
+    optgroup { font-size:24px; }
+    
+    #middle {
+        top: 0;
+
+        bottom: 0px;
+        margin: 0 auto;
+        position: absolute;
+        width: 100%
+    }
+
+    #middle-offset {
+      position: relative;
+      height: 100%;
+    }
+
+    #left, #right {
+        overflow-y: scroll
+    }
+    #left {
+        width: 32%;
+        height: 100%
+    }
+    #right {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        width: 560px;
+        bottom: 0;
+
+    }
+    
 </style>
