@@ -8,20 +8,9 @@
 <font size="6" style="right:0px;position:absolute">Warframe Data Looker Upper</font>
 
 <br>
-<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()" style="height:calc(100% - 42px);left:0%;margin-top:21px"></select>
-<div align="right" class="statusbox">
-    <table align="right" id="FrameTable" class="table">
-        <tr colspan="2" class="trheader">
-            <th colspan="2" class="noborder"></th>
-        </tr>
-        <tr colspan="2" class="trheader">
-            <th colspan="2" class="noborder"></th>
-        </tr>
-    </table>
-</div>
-
-
-<select id="CategorySelect" class="ItemSelection" onchange="queryCategorySelection()">
+<select id="ItemSelect" size="10" class="ItemSelection" onchange="querySelection()" style="height:calc(100% - 82px);left:0%;margin-top:21px"></select>
+<br>
+<select id="CategorySelect" class="ItemSelection" onchange="queryCategorySelection()" style="height:42px;font-size:21px;font-family:Trebuchet MS">
     <option>All</option>
     <option>Warframes</option>
     <option>Primary</option>
@@ -36,6 +25,18 @@
     <option>Relics</option>
     <option>Misc</option>
 </select>
+
+<div align="right" class="statusbox" id="right">
+    <table align="right" id="FrameTable" class="table">
+        <tr colspan="2" class="trheader">
+            <th colspan="2" class="noborder"></th>
+        </tr>
+        <tr colspan="2" class="trheader">
+            <th colspan="2" class="noborder"></th>
+        </tr>
+    </table>
+</div>
+
 <br>
 
 
@@ -47,55 +48,65 @@
         column-span: all;
         column-count: 1;
     }
+
     .table td {
         font-size: 16px;
         padding: 7px 10px;
         border-right: 2px solid black;
         left: 0px;
     }
+
     .table th {
         font-size: 20px;
         padding: 10px 10px;
         border-right: 2px solid black;
         left: 0px;
     }
+
     html, body {
         margin: 0;
         padding: 0;
         font-family: "Trebuchet MS";
     }
+
     .ItemSelection {
         width: 350px;
         line-height: 5px;
         margin-left: 0px;
         overflow-y: auto;
     }
-        .ItemSelection option {
-            padding-top: 8px;
-            padding-bottom: 8px;
-            margin: auto;
-            font-family: "Trebuchet MS";
-            font-size: 15px;
-        }
+
+    .ItemSelection option {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        margin: auto;
+        font-family: "Trebuchet MS";
+        font-size: 15px;
+    }
     /*.column {
         float: left;
         padding: 10px;
     }
+
     .left {
       width: 500px;
     }
+
     .right {
       width: 500px;
     }
+
     .row:after {
         content: "";
         display: table;
         clear: both;
     }*/
+
     * {
         box-sizing: border-box;
         /*overflow: hidden;*/
     }
+
     #ItemSearch {
         margin-top: 0px;
         margin-bottom: -1px;
@@ -104,10 +115,44 @@
         font-family: "Trebuchet MS";
         width: 350px;
     }
+
     .statusbox {
         margin-right: 0%;
         float: right;
         right: 0%;
         margin-top: 20px;
     }
+
+    optgroup { font-size:24px; }
+    
+    #middle {
+        top: 0;
+
+        bottom: 0px;
+        margin: 0 auto;
+        position: absolute;
+        width: 100%
+    }
+
+    #middle-offset {
+      position: relative;
+      height: 100%;
+    }
+
+    #left, #right {
+        overflow-y: scroll
+    }
+    #left {
+        width: 32%;
+        height: 100%
+    }
+    #right {
+        position: absolute;
+        right: 0;
+        top: 20px;
+        width: 550px;
+        bottom: 0;
+
+    }
+    
 </style>
