@@ -166,8 +166,6 @@ function CategorizeWeapons(WeaponsList){
 
     Object.keys(WeaponsList).forEach(function(key) {
 
-        // Select what category the item should be put in
-        //var PushCat = ItemTypes[WeaponsList[key]["type"]];
         var PushCat = WeaponsList[key]["category"];
 
         ItemData[PushCat][Object.keys(ItemData[PushCat])["length"]] = WeaponsList[key];
@@ -175,9 +173,15 @@ function CategorizeWeapons(WeaponsList){
       });
 }
 
-// Real juicy stuff. Adds info for warframes and soon weapons
+///
+/// Real juicy stuff. Adds info for warframes and soon weapons. DOES THE HEAVY LIFTING
+///
 function AddInfoToTable(ParsedData, TargetTable) {
     clearAllTables();
+    var ObtainTable = document.getElementById("ObtainTable");
+
+
+    // Add the main information for the item
     VariablesToAdd = ItemFormat[ParsedData["category"]];
     if (ParsedData.type)
     var frameImage = "https://raw.githubusercontent.com/WFCD/warframe-items/development/data/img/" + ParsedData.imageName;
@@ -224,6 +228,23 @@ function AddInfoToTable(ParsedData, TargetTable) {
         cell2.innerHTML = _frameInfo;
         cell2.style.TextAlign = "left";
     }
+    // Add "Components" header
+
+    componentsRow = TargetTable.insertRow(TargetTable.rows.length);
+    componentsCell = componentsRow.insertCell(0);
+    componentsCell.colSpan = 2;
+    componentsCell.className += "noborder trheader";
+    componentsCell.innerHTML = "Components";
+    // Add the information for obtaining
+    ParsedData["components"].forEach(function (component) {
+        row = TargetTable.insertRow(TargetTable.rows.length)
+        cell1 = row.insertCell(0),
+            cell2 = row.insertCell(1),
+            cell1.colSpan = 1;
+        cell2.colSpan = 1;
+        cell2.className += "noborder";
+        cell1.innerHTML = component["name"];
+    });
 }
 
 function clearAllTables() {
@@ -232,6 +253,9 @@ function clearAllTables() {
         document.getElementById("FrameTable").deleteRow(document.getElementById("FrameTable").rows.length - 1);
     }
     // Clear item obtain information table
+    /*while (document.getElementById("ObtainTable").rows.length > 2) {
+        document.getElementById("ObtainTable").deleteRow(document.getElementById("ObtainTable").rows.length - 1);
+    }*/
 }
 
 function searchUpdate() {
